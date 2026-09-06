@@ -79,85 +79,96 @@ const TYPES = {
 
 const SERVICE_GUIDES = {
   '방문요양': {
-    note: '방문요양 자료는 방문요양 수급자별로 정리합니다.',
-    items: [
-      ['1', '장기요양급여 계약 관련 서류', '해당 수급자의 급여계약에 관한 보존자료를 먼저 둡니다.'],
-      ['2', '방문요양 급여제공기록지 등', '방문요양 급여제공기록지와 급여비용 산정에 필요한 관련 서류·증빙자료를 정리합니다.'],
-      ['3', '급여비용 명세서 부본 또는 본인부담금수납대장', '기관이 보존하는 해당 자료를 마지막 묶음으로 확인합니다.']
-    ]
+    common: [
+      ['자체', '배상책임보험 증서'],
+      ['자체', '직원 근무일지(출근부)'],
+      ['별지24', '프로그램관리자·사회복지사 업무수행일지'],
+      ['별지25', '교육시간 관리대장']
+    ],
+    recipient: ['급여계약 서류', '급여제공기록지', '급여비용 명세서', '(또는) 본인부담금 수납대장']
   },
   '방문목욕': {
-    note: '방문목욕 자료는 방문목욕 수급자별로 정리합니다.',
-    items: [
-      ['1', '장기요양급여 계약 관련 서류', '해당 수급자의 급여계약에 관한 보존자료를 먼저 둡니다.'],
-      ['2', '방문목욕 급여제공기록지 등', '방문목욕 급여제공기록지와 급여비용 산정에 필요한 관련 서류·증빙자료를 정리합니다.'],
-      ['3', '급여비용 명세서 부본 또는 본인부담금수납대장', '기관이 보존하는 해당 자료를 마지막 묶음으로 확인합니다.']
-    ]
+    common: [
+      ['자체', '배상책임보험 증서'],
+      ['자체', '직원 근무일지(출근부)'],
+      ['별지24', '프로그램관리자·사회복지사 업무수행일지'],
+      ['별지25', '교육시간 관리대장']
+    ],
+    recipient: ['급여계약 서류', '급여제공기록지', '급여비용 명세서', '(또는) 본인부담금 수납대장']
   },
   '방문간호': {
-    note: '방문간호는 다른 급여와 달리 방문간호지시서를 별도로 빠뜨리지 않도록 확인합니다.',
-    items: [
-      ['1', '장기요양급여 계약 관련 서류', '해당 수급자의 급여계약에 관한 보존자료를 먼저 둡니다.'],
-      ['2', '방문간호 급여제공기록지 등', '방문간호 급여제공기록지와 급여비용 산정에 필요한 관련 서류·증빙자료를 정리합니다.'],
-      ['3', '방문간호지시서', '해당 수급자의 방문간호지시서를 별도 항목으로 확인합니다.'],
-      ['4', '급여비용 명세서 부본 또는 본인부담금수납대장', '기관이 보존하는 해당 자료를 마지막 묶음으로 확인합니다.']
-    ]
+    common: [
+      ['자체', '배상책임보험 증서'],
+      ['자체', '직원 근무일지(출근부)'],
+      ['별지24', '프로그램관리자·사회복지사 업무수행일지'],
+      ['별지25', '교육시간 관리대장']
+    ],
+    recipient: ['급여계약 서류', '급여제공기록지', '방문간호지시서', '급여비용 명세서', '(또는) 본인부담금 수납대장']
   },
   '복지용구': {
-    note: '복지용구 급여를 제공한 수급자별로 계약 및 급여제공 관련 자료를 정리합니다.',
-    items: [
-      ['1', '장기요양급여 계약 관련 서류', '복지용구 급여계약에 관한 보존자료를 먼저 둡니다.'],
-      ['2', '복지용구 급여제공기록지 등', '복지용구 급여제공기록지와 급여비용 산정에 필요한 관련 서류·증빙자료를 정리합니다.'],
-      ['3', '급여비용 명세서 부본 또는 본인부담금수납대장', '기관이 보존하는 해당 자료를 마지막 묶음으로 확인합니다.']
-    ]
+    common: [],
+    recipient: ['급여계약 서류', '급여제공기록지', '급여비용 명세서', '(또는) 본인부담금 수납대장']
   },
   '주야간보호': {
-    note: '주·야간보호 수급자별로 해당 연도의 급여제공 자료를 정리합니다.',
-    items: [
-      ['1', '장기요양급여 계약 관련 서류', '해당 수급자의 급여계약에 관한 보존자료를 먼저 둡니다.'],
-      ['2', '주·야간보호 급여제공기록지 등', '급여제공기록지와 급여비용 산정에 필요한 관련 서류·증빙자료를 정리합니다.'],
-      ['3', '급여비용 명세서 부본 또는 본인부담금수납대장', '기관이 보존하는 해당 자료를 마지막 묶음으로 확인합니다.']
-    ]
+    common: [
+      ['자체', '배상책임보험 증서'],
+      ['자체', '직원 근무일지(출근부)'],
+      ['별지22', '이동서비스일지'],
+      ['별지23', '주·야간보호 목욕서비스 제공일지'],
+      ['별지24', '프로그램관리자·사회복지사 업무수행일지'],
+      ['별지25', '교육시간 관리대장'],
+      ['별지26', '프로그램 운영기록지']
+    ],
+    recipient: ['급여계약 서류', '급여제공기록지', '급여비용 명세서', '(또는) 본인부담금 수납대장']
   },
   '주야간보호 치매전담실': {
-    note: '치매전담실도 기본 이관범주는 동일하며, 급여비용 산정에 필요한 치매전담 관련 증빙자료가 있다면 ② 묶음에 함께 확인합니다.',
-    items: [
-      ['1', '장기요양급여 계약 관련 서류', '해당 수급자의 급여계약에 관한 보존자료를 먼저 둡니다.'],
-      ['2', '주·야간보호 급여제공기록지 등', '급여제공기록지와 치매전담형 급여비용 산정에 필요한 관련 서류·증빙자료를 함께 확인합니다.'],
-      ['3', '급여비용 명세서 부본 또는 본인부담금수납대장', '기관이 보존하는 해당 자료를 마지막 묶음으로 확인합니다.']
-    ]
+    common: [
+      ['자체', '배상책임보험 증서'],
+      ['자체', '직원 근무일지(출근부)'],
+      ['별지22', '이동서비스일지'],
+      ['별지23', '주·야간보호 목욕서비스 제공일지'],
+      ['별지24-2', '치매전담형 프로그램관리자 업무수행일지'],
+      ['별지25', '교육시간 관리대장'],
+      ['별지26', '프로그램 운영기록지']
+    ],
+    recipient: ['급여계약 서류', '급여제공기록지', '급여비용 명세서', '(또는) 본인부담금 수납대장']
   },
   '단기보호': {
-    note: '단기보호 수급자별로 해당 연도의 급여제공 자료를 정리합니다.',
-    items: [
-      ['1', '장기요양급여 계약 관련 서류', '해당 수급자의 급여계약에 관한 보존자료를 먼저 둡니다.'],
-      ['2', '단기보호 급여제공기록지 등', '급여제공기록지와 급여비용 산정에 필요한 관련 서류·증빙자료를 정리합니다.'],
-      ['3', '급여비용 명세서 부본 또는 본인부담금수납대장', '기관이 보존하는 해당 자료를 마지막 묶음으로 확인합니다.']
-    ]
+    common: [
+      ['자체', '배상책임보험 증서'],
+      ['자체', '직원 근무일지(출근부)'],
+      ['별지25', '교육시간 관리대장'],
+      ['별지26', '프로그램 운영기록지']
+    ],
+    recipient: ['급여계약 서류', '급여제공기록지', '급여비용 명세서', '(또는) 본인부담금 수납대장']
   },
   '노인요양시설': {
-    note: '시설급여 수급자별로 해당 연도의 급여제공 자료를 정리합니다.',
-    items: [
-      ['1', '장기요양급여 계약 관련 서류', '해당 수급자의 급여계약에 관한 보존자료를 먼저 둡니다.'],
-      ['2', '시설급여 급여제공기록지 등', '시설급여 제공기록지와 급여비용 산정에 필요한 관련 서류·증빙자료를 정리합니다.'],
-      ['3', '급여비용 명세서 부본 또는 본인부담금수납대장', '기관이 보존하는 해당 자료를 마지막 묶음으로 확인합니다.']
-    ]
+    common: [
+      ['자체', '배상책임보험 증서'],
+      ['자체', '직원 근무일지(출근부)'],
+      ['별지25', '교육시간 관리대장'],
+      ['별지26', '프로그램 운영기록지']
+    ],
+    recipient: ['급여계약 서류', '급여제공기록지', '급여비용 명세서', '(또는) 본인부담금 수납대장']
   },
   '노인요양시설 치매전담실': {
-    note: '치매전담실도 기본 이관범주는 동일하며, 급여비용 산정에 필요한 치매전담 관련 증빙자료가 있다면 ② 묶음에 함께 확인합니다.',
-    items: [
-      ['1', '장기요양급여 계약 관련 서류', '해당 수급자의 급여계약에 관한 보존자료를 먼저 둡니다.'],
-      ['2', '시설급여 급여제공기록지 등', '급여제공기록지와 치매전담형 급여비용 산정에 필요한 관련 서류·증빙자료를 함께 확인합니다.'],
-      ['3', '급여비용 명세서 부본 또는 본인부담금수납대장', '기관이 보존하는 해당 자료를 마지막 묶음으로 확인합니다.']
-    ]
+    common: [
+      ['자체', '배상책임보험 증서'],
+      ['자체', '직원 근무일지(출근부)'],
+      ['별지24-2', '치매전담형 프로그램관리자 업무수행일지'],
+      ['별지25', '교육시간 관리대장'],
+      ['별지26', '프로그램 운영기록지']
+    ],
+    recipient: ['급여계약 서류', '급여제공기록지', '급여비용 명세서', '(또는) 본인부담금 수납대장']
   },
   '공동생활가정': {
-    note: '공동생활가정 수급자별로 해당 연도의 급여제공 자료를 정리합니다.',
-    items: [
-      ['1', '장기요양급여 계약 관련 서류', '해당 수급자의 급여계약에 관한 보존자료를 먼저 둡니다.'],
-      ['2', '시설급여 급여제공기록지 등', '급여제공기록지와 급여비용 산정에 필요한 관련 서류·증빙자료를 정리합니다.'],
-      ['3', '급여비용 명세서 부본 또는 본인부담금수납대장', '기관이 보존하는 해당 자료를 마지막 묶음으로 확인합니다.']
-    ]
+    common: [
+      ['자체', '배상책임보험 증서'],
+      ['자체', '직원 근무일지(출근부)'],
+      ['별지25', '교육시간 관리대장'],
+      ['별지26', '프로그램 운영기록지']
+    ],
+    recipient: ['급여계약 서류', '급여제공기록지', '급여비용 명세서', '(또는) 본인부담금 수납대장']
   }
 };
 
@@ -198,7 +209,7 @@ function renderTypes(){
   const keys = business === 'close' ? ['transfer','lost','nohistory'] : ['transfer','lost','self'];
   $('#typeGrid').innerHTML = keys.map(k=>{
     const t=TYPES[k];
-    return `<button type="button" class="type-card" data-type="${k}"><span class="tag">${t.tag}</span><strong>${t.name}</strong><p>${t.desc}</p></button>`;
+    return `<button type="button" class="type-card" data-type="${k}"><strong>${t.name}</strong><p>${t.desc}</p></button>`;
   }).join('');
   $$('[data-type]').forEach(btn=>btn.addEventListener('click',()=>selectType(btn.dataset.type)));
 }
@@ -460,14 +471,30 @@ $('#makeLabelBtn').addEventListener('click',()=>{
     return;
   }
   err.classList.add('hidden');
-  const yearText=years.join(' · ');
-  const cards=services.map(s=>{
-    const guide=SERVICE_GUIDES[s];
-    const items=guide.items.map(item=>`<li class="guide-row"><span class="guide-no">${item[0]}</span><div><strong>${item[1]}</strong><p>${item[2]}</p></div></li>`).join('');
-    const nurse=s==='방문간호'?'<div class="service-alert"><strong>방문간호 확인</strong><p>방문간호지시서를 별도 항목으로 반드시 확인하세요.</p></div>':'';
-    return `<article class="binding-result-card"><div class="label-head"><span>선택한 편철 묶음</span><strong>${s}</strong><p><b>${yearText}</b> · 선택한 각 연도별로 같은 순서로 따로 정리합니다.</p></div><p class="guide-note">${guide.note}</p><ol class="service-guide">${items}</ol>${nurse}</article>`;
+
+  const renderCommon = (common)=> {
+    if(!common.length) return '';
+    const rows=common.map(([code,name])=>`<li><span class="form-code">[${code}]</span><strong>${name}</strong></li>`).join('');
+    return `<section class="year-common"><h4>📂 공통서류</h4><ul>${rows}</ul></section>`;
+  };
+  const renderService = (name, guide)=> {
+    const recipient=guide.recipient.map((item,idx)=>{
+      const alt=item.startsWith('(또는)');
+      return `<li class="${alt?'alt-line':''}">${alt?'<span class="alt-arrow">↳</span>':''}<span>${item}</span></li>`;
+    }).join('');
+    return `<section class="service-doc-block"><div class="service-doc-title">${name}</div><div class="recipient-card"><strong>① 수급자</strong><ul>${recipient}</ul></div><div class="recipient-placeholder">② 수급자</div><div class="recipient-placeholder">③ 수급자</div></section>`;
+  };
+
+  const yearCards=years.map(year=>{
+    const selectedGuides=services.map(name=>[name,SERVICE_GUIDES[name]]);
+    const commonMap=new Map();
+    selectedGuides.forEach(([,guide])=>guide.common.forEach(([code,name])=>commonMap.set(`${code}|${name}`,[code,name])));
+    const common=[...commonMap.values()];
+    const serviceBlocks=selectedGuides.map(([name,guide])=>renderService(name,guide)).join('');
+    return `<article class="year-binding-card"><div class="year-binding-head">${year}</div>${renderCommon(common)}<section class="year-service-section"><h4>👤 급여종류별 서류</h4><div class="service-doc-grid">${serviceBlocks}</div></section></article>`;
   }).join('');
-  $('#labelResult').innerHTML=`<div class="binding-result-summary"><b>${years.length}개 연도 · ${services.length}개 급여종류 선택</b><p>아래 급여종류별 순서를 참고해 선택한 각 연도 자료를 따로 편철하세요.</p></div>${cards}<div class="label-finish"><b>마지막 확인</b><p>수급자별 자료를 정리한 뒤 이관 목록표의 인원·권수·매수와 실제 자료가 일치하는지 대조하세요.</p></div>`;
+
+  $('#labelResult').innerHTML=`<div class="binding-result-summary"><b>${years.length}개 연도 · ${services.length}개 급여종류 선택</b><p>선택한 운영연도별로 공통서류를 먼저 정리하고, 급여종류별로 수급자 자료를 차례대로 편철합니다.</p></div>${yearCards}<div class="label-finish"><b>마지막 확인</b><p>이관 목록표에 기재한 수량과 실제 편철한 자료의 수량이 일치하는지 확인하세요.</p></div>`;
   $('#labelResult').classList.remove('hidden');
   setTimeout(()=>scrollToEl($('#labelResult')),60);
 });
