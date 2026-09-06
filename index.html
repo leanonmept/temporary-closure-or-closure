@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#0b5cab" />
   <meta name="description" content="장기요양기관 휴업·폐업 자료이관 절차를 쉽게 확인하는 안내 사이트" />
   <title>장기요양기관 휴·폐업 안내</title>
-  <link rel="stylesheet" href="styles-v26.css?v=26" />
+  <link rel="stylesheet" href="styles-v27.css?v=27" />
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" href="icons/icon-192.png" />
 </head>
@@ -387,6 +387,18 @@
             <div>
               <strong>모든 자료는 300매를 기준으로 1권씩 나눕니다</strong>
               <p>다만 <b>한 수급자의 자료는 권과 권 사이에서 끊기지 않도록</b> 한 권에 함께 편철합니다.</p>
+              <div class="volume-cover-guide">
+                <b>표지에 반드시 적을 내용</b>
+                <ul>
+                  <li><b>해당 기관명</b></li>
+                  <li><b>급여종류</b> (예: 방문요양)</li>
+                  <li><b>자료 해당 연도</b> (예: 2025년)</li>
+                  <li><b>전체 권수 중 현재 권 번호</b> (예: 총 2권 중 1권)</li>
+                </ul>
+                <span class="volume-cover-example">표지 예시: ○○재가복지센터 · 방문요양 · 2025년 · 총 2권 중 1권</span>
+              </div>
+              <p class="volume-tie-rule"><b>표지를 붙인 뒤 자료가 흩어지지 않도록 권별로 고무줄로 묶어서 가져오세요.</b></p>
+              <p class="volume-year-rule"><b>연도가 바뀌면 앞 권에 여유가 남아 있어도 이전 연도 자료와 합치지 않고 새로운 권으로 시작합니다.</b></p>
               <div class="volume-example"><b>예시</b> 1권이 280매인 상태에서 다음 수급자 자료가 45매라면, 280매에서 1권을 마치고 다음 수급자 45매는 2권에 모두 넣습니다.</div>
             </div>
           </article>
@@ -519,7 +531,7 @@
       caches.keys().then(keys => Promise.all(keys.filter(k => k.startsWith('hyupeup-guide-')).map(k => caches.delete(k)))).catch(()=>{});
     }
   </script>
-  <script src="app-v26.js?v=26"></script>
+  <script src="app-v27.js?v=27"></script>
 
   <div class="form-modal hidden" id="formModal" role="dialog" aria-modal="true" aria-labelledby="formModalTitle">
     <div class="form-modal-backdrop" data-form-close></div>
