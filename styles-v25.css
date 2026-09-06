@@ -186,4 +186,12 @@ body.modal-open{overflow:hidden}
 .binding-page-rules ul{margin:9px 0 0;padding-left:1.15em;color:#314a62;font-size:.84rem}
 .binding-page-rules li{margin:4px 0}
 .volume-example{margin-top:10px;padding:10px 12px;border-radius:11px;background:#fff;border:1px solid #edc995;color:#68471e;font-size:.8rem;line-height:1.55}
+.numbering-steps{margin:11px 0 0;padding-left:1.25em;color:#314a62;font-size:.84rem;line-height:1.6}
+.numbering-steps li{margin:6px 0}
+.numbering-example-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}
+.numbering-example-grid>div{display:flex;flex-direction:column;gap:4px;padding:11px 12px;border:1px solid #b9d4ef;border-radius:12px;background:#fff;color:#40566d;font-size:.78rem}
+.numbering-example-grid>div>b{color:#154f83;font-size:.82rem;margin-bottom:2px}
+.numbering-caution{margin-top:10px;padding:10px 12px;border-left:4px solid #e18a28;border-radius:9px;background:#fff8eb;color:#6f470f;font-size:.79rem;line-height:1.55}
+.remark-example{color:#9a4b08;font-weight:850;background:#fff4e8!important}
 @media(max-width:760px){.binding-page-rules{grid-template-columns:1fr}.binding-page-rules article{padding:16px}.binding-rule-icon{flex-basis:34px;width:34px;height:34px}}
+@media(max-width:620px){.numbering-example-grid{grid-template-columns:1fr}}
