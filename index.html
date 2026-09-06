@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#0b5cab" />
   <meta name="description" content="장기요양기관 휴업·폐업 자료이관 절차를 쉽게 확인하는 안내 사이트" />
   <title>장기요양기관 휴·폐업 안내</title>
-  <link rel="stylesheet" href="styles-v25.css?v=25.3" />
+  <link rel="stylesheet" href="styles-v26.css?v=26" />
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" href="icons/icon-192.png" />
 </head>
@@ -284,13 +284,13 @@
             <thead>
               <tr>
                 <th scope="col">연번</th>
-                <th scope="col">인정번호</th>
+                <th scope="col">장기요양<br>인정번호</th>
                 <th scope="col">성명</th>
-                <th scope="col">① 계약서</th>
-                <th scope="col" class="target-column">② 기록지 등</th>
+                <th scope="col">① 장기요양급여<br>계약에 관한 서류</th>
+                <th scope="col" class="target-column">② 장기요양급여<br>제공기록지 등</th>
                 <th scope="col">③ 방문간호<br>지시서</th>
-                <th scope="col">④ 명세서</th>
-                <th scope="col">⑤ 전자문서</th>
+                <th scope="col">④ 장기요양급여비용<br>명세서 부본</th>
+                <th scope="col">⑤ ②부터 ④까지의 서류 중<br>전자문서로 기록·관리하고 있는 경우<br>그 전자문서</th>
                 <th scope="col">비고</th>
               </tr>
             </thead>
@@ -519,7 +519,7 @@
       caches.keys().then(keys => Promise.all(keys.filter(k => k.startsWith('hyupeup-guide-')).map(k => caches.delete(k)))).catch(()=>{});
     }
   </script>
-  <script src="app-v25.js?v=25.3"></script>
+  <script src="app-v26.js?v=26"></script>
 
   <div class="form-modal hidden" id="formModal" role="dialog" aria-modal="true" aria-labelledby="formModalTitle">
     <div class="form-modal-backdrop" data-form-close></div>
