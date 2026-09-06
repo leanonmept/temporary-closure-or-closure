@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#0b5cab" />
   <meta name="description" content="장기요양기관 휴업·폐업 자료이관 절차를 쉽게 확인하는 안내 사이트" />
   <title>장기요양기관 휴·폐업 안내</title>
-  <link rel="stylesheet" href="styles-v23.css?v=23" />
+  <link rel="stylesheet" href="styles-v25.css?v=25.2" />
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" href="icons/icon-192.png" />
 </head>
@@ -53,14 +53,14 @@
         <div class="overview-grid">
           <a href="#start" class="overview-card"><b>01</b><strong>신청접수</strong><span>휴업·폐업 구분부터 공단 접수증 수령까지</span></a>
           <a href="#documents" class="overview-card"><b>02</b><strong>제출서류</strong><span>신청서·목록표·확인서·위임장과 신청인 서류</span></a>
-          <a href="#binding" class="overview-card"><b>03</b><strong>편철방법</strong><span>연도·급여종류를 선택해 편철 순서 확인</span></a>
+          <a href="#binding" class="overview-card"><b>03</b><strong>편철방법</strong><span>누르면 편철 내용으로 바로 이동</span></a>
           <a href="#records" class="overview-card"><b>04</b><strong>자료이관</strong><span>이관대상·이관 제외자료·전자문서 확인</span></a>
           <a href="#forms" class="overview-card"><b>05</b><strong>제출서식</strong><span>신청서·목록표·확인서·위임장 바로 확인</span></a>
           <a href="#check" class="overview-card"><b>06</b><strong>확인사항</strong><span>공단 방문 전 빠뜨린 항목이 없는지 최종점검</span></a>
         </div>
         <div class="overview-subrow">
           <a href="#question-overview" class="overview-wide"><strong>질문 한눈에 보기</strong><span>궁금한 질문을 고르면 답변이 바로 열립니다</span></a>
-          <a href="#binding" class="overview-wide"><strong>기록물 편철 순서 가이드</strong><span>운영기간·급여종류 복수선택 가능</span></a>
+          <a href="#binding" class="overview-wide"><strong>기록물 편철 순서 가이드</strong><span>누르면 편철 내용으로 바로 이동</span></a>
         </div>
       </div>
     </section>
@@ -265,7 +265,7 @@
       </div>
     </section>
 
-    <section class="transfer-example-section" id="transfer-list-example">
+    <section class="transfer-example-section hidden" id="transfer-list-example" data-content data-guide-content>
       <div class="shell">
         <div class="section-heading">
           <span>이관 목록표 작성 예시</span>
@@ -301,8 +301,8 @@
               <tr class="common-row"><td></td><th scope="row">프로그램관리자·사회복지사<br>업무수행일지</th><td></td><td></td><td class="target-column"><strong>24</strong></td><td></td><td></td><td></td><td>공통서류</td></tr>
               <tr class="common-row"><td></td><th scope="row">교육시간 관리대장</th><td></td><td></td><td class="target-column"><strong>3</strong></td><td></td><td></td><td></td><td>공통서류</td></tr>
               <tr class="recipient-row"><td><strong>1</strong></td><td><strong>L0000000</strong></td><td>김철수</td><td><strong>9</strong></td><td class="target-column"><strong>52</strong></td><td></td><td><strong>12</strong></td><td></td><td></td></tr>
-              <tr class="recipient-row"><td><strong>2</strong></td><td><strong>L1111111</strong></td><td>이영희</td><td><strong>9</strong></td><td class="target-column"><strong>52</strong></td><td></td><td><strong>12</strong></td><td></td><td></td></tr>
-              <tr class="recipient-row"><td><strong>3</strong></td><td><strong>L2222222</strong></td><td>박영수</td><td><strong>9</strong></td><td class="target-column"><strong>52</strong></td><td></td><td><strong>12</strong></td><td></td><td></td></tr>
+              <tr class="recipient-row"><td><strong>2</strong></td><td><strong>L2222222</strong></td><td>박영수</td><td><strong>9</strong></td><td class="target-column"><strong>52</strong></td><td></td><td><strong>12</strong></td><td></td><td></td></tr>
+              <tr class="recipient-row"><td><strong>3</strong></td><td><strong>L1111111</strong></td><td>이영희</td><td><strong>9</strong></td><td class="target-column"><strong>52</strong></td><td></td><td><strong>12</strong></td><td></td><td></td></tr>
               <tr class="recipient-row"><td><strong>4</strong></td><td><strong>L3333333</strong></td><td>홍길동</td><td><strong>9</strong></td><td class="target-column"><strong>52</strong></td><td></td><td><strong>12</strong></td><td></td><td></td></tr>
             </tbody>
           </table>
@@ -313,7 +313,7 @@
           <ul>
             <li>위 숫자와 수급자 정보는 작성 위치를 보여주기 위한 예시이며, 실제 보유자료를 세어 숫자만 기재합니다.</li>
             <li>공통서류 4종도 ② 기록지 등 칸의 총계에 포함하고, 수급자별 기록지 매수와 합산합니다.</li>
-            <li>방문요양에는 방문간호지시서가 없으므로 ③ 칸은 비워 두거나 관할 지사 안내에 따라 0으로 표시합니다.</li>
+            <li>방문요양에는 방문간호지시서가 없으므로 ③ 칸은 비워둡니다.</li>
           </ul>
         </div>
       </div>
@@ -335,7 +335,7 @@
         <div class="record-grid">
           <article><b>01</b><h3>장기요양급여 계약 관련 서류</h3><p>수급자와의 장기요양급여 계약에 관한 보존자료를 확인합니다.</p></article>
           <article><b>02</b><h3>급여제공기록지 등</h3><p>급여제공기록지와 급여비용 산정에 필요한 관련 증빙서류를 확인합니다.</p></article>
-          <article><b>03</b><h3>방문간호지시서</h3><p>방문간호를 운영한 기관은 해당 자료를 확인합니다.</p></article>
+          <article class="visit-nursing-only"><b>03</b><span class="record-only-badge">방문간호만 제출</span><h3>방문간호지시서</h3><p><strong>방문간호 급여를 제공한 기관만</strong> 제출합니다. 방문요양·방문목욕 등 다른 급여종류는 해당하지 않습니다.</p></article>
           <article><b>04</b><h3>급여비용 명세서 관련 자료</h3><p>기관에서 보존 중인 급여비용 명세 관련 자료를 확인합니다.</p></article>
         </div>
 
@@ -348,7 +348,7 @@
       </div>
     </section>
 
-    <section class="content hidden" id="binding" data-content>
+    <section class="content hidden" id="binding" data-content data-guide-content>
       <div class="shell">
         <div class="section-heading">
           <span>편철 가이드</span>
@@ -362,6 +362,29 @@
             <span>① 운영연도별</span><b>→</b><span>② 공통서류</span><b>→</b><span>③ 급여종류별·수급자별</span><b>→</b><span>④ 목록표 수량 대조</span>
           </div>
           <p>실제 이관 수량은 신청서와 이관 목록표에 적은 수량과 일치하도록 최종 확인하세요.</p>
+        </div>
+
+        <div class="binding-page-rules" aria-label="쪽번호 기재와 분권 기준">
+          <article class="page-number-rule">
+            <span class="binding-rule-icon" aria-hidden="true">✏️</span>
+            <div>
+              <strong>각 장 우측 하단에 연필로 쪽번호를 적습니다</strong>
+              <p>서류 항목별로 <b>1부터 총매수까지</b> 적고, 다음 항목으로 넘어가면 다시 1부터 시작합니다.</p>
+              <ul>
+                <li>배상책임보험이 4장이면 각 장 우측 하단에 <b>1, 2, 3, 4</b></li>
+                <li>직원 근무일지는 다시 <b>1부터 총매수까지</b></li>
+                <li>수급자별 계약서·제공기록지·명세서도 <b>각 서류마다 1부터</b></li>
+              </ul>
+            </div>
+          </article>
+          <article class="volume-rule">
+            <span class="binding-rule-icon" aria-hidden="true">📚</span>
+            <div>
+              <strong>모든 자료는 300매를 기준으로 1권씩 나눕니다</strong>
+              <p>다만 <b>한 수급자의 자료는 권과 권 사이에서 끊기지 않도록</b> 한 권에 함께 편철합니다.</p>
+              <div class="volume-example"><b>예시</b> 1권이 280매인 상태에서 다음 수급자 자료가 45매라면, 280매에서 1권을 마치고 다음 수급자 45매는 2권에 모두 넣습니다.</div>
+            </div>
+          </article>
         </div>
 
         <div class="binding-select-panel">
@@ -460,20 +483,6 @@
       </div>
     </section>
 
-    <section class="privacy-section" id="privacy">
-      <div class="shell privacy-grid">
-        <div>
-          <span class="mini-kicker">개인정보 보호 안내</span>
-          <h2>개인정보나 수급자 정보는 입력하지 마세요</h2>
-          <p>이 안내사이트는 기관명, 담당자명, 연락처, 주민등록번호, 장기요양인정번호 등 개인정보 입력을 요구하지 않습니다. 체크리스트 선택값은 사용 중인 기기의 브라우저에만 임시 저장됩니다.</p>
-        </div>
-        <div class="privacy-items">
-          <p><b>입력하지 말아야 할 정보</b><br>수급자 성명·생년월일·인정번호, 직원 개인정보, 기관 내부 민감정보</p>
-          <p><b>홈 화면 추가</b><br>휴대폰 브라우저의 ‘홈 화면에 추가’를 사용하면 안내사이트를 앱처럼 열 수 있습니다.</p>
-        </div>
-      </div>
-    </section>
-
     <section class="contact" id="contact">
       <div class="shell contact-inner">
         <div>
@@ -493,7 +502,6 @@
     <div class="shell">
       <strong>장기요양기관 휴·폐업 자료이관 안내</strong>
       <p>장기요양기관 휴·폐업 자료이관 업무를 쉽게 확인하기 위한 안내입니다. 실제 제출 전 관할 지사의 최신 안내를 확인해 주세요.</p>
-      <p class="footer-small">개인정보 및 민감정보는 입력하지 마세요.</p>
     </div>
   </footer>
 
@@ -506,7 +514,7 @@
       caches.keys().then(keys => Promise.all(keys.filter(k => k.startsWith('hyupeup-guide-')).map(k => caches.delete(k)))).catch(()=>{});
     }
   </script>
-  <script src="app-v23.js?v=23"></script>
+  <script src="app-v25.js?v=25.2"></script>
 
   <div class="form-modal hidden" id="formModal" role="dialog" aria-modal="true" aria-labelledby="formModalTitle">
     <div class="form-modal-backdrop" data-form-close></div>
