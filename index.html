@@ -138,19 +138,12 @@
           <h2>모든 유형에서 먼저 확인하세요</h2>
         </div>
 
-        <div class="common-docs">
-          <article class="doc-card primary">
-            <div class="doc-no">필수 1</div>
-            <h3>공단이관·자체보관 신청서</h3>
-            <p>자료이관·전건 분실·급여제공이력 없음·자체보관 모두 신청서를 작성합니다.</p>
-          </article>
-          <div class="plus">+</div>
-          <article class="doc-card secondary">
-            <div class="doc-no">필수 2</div>
-            <h3>목록표 1종</h3>
-            <p><b>자료이관·급여제공이력 없음·자체보관은 이관 목록표</b>, <b>전건 분실은 분실 및 훼손 목록표</b>를 기본으로 준비합니다.</p>
-          </article>
+        <div class="simple-docs">
+          <div class="simple-doc"><b>1. 신청서</b><span>모든 경우 작성합니다.</span></div>
+          <div class="simple-plus">+</div>
+          <div class="simple-doc"><b>2. 이관 목록표</b><span>모든 경우 기본으로 작성합니다.</span></div>
         </div>
+        <p class="simple-doc-note"><b>분실·훼손 자료가 있으면</b> 분실 및 훼손 목록표를 추가로 작성합니다. 확인서·위임장 등은 해당되는 경우에만 준비합니다.</p>
 
         <div class="selected-doc-box">
           <h3 id="selectedDocTitle">선택한 유형의 준비서류</h3>
@@ -175,22 +168,22 @@
         <div class="forms-grid">
           <a class="form-card" href="https://www.law.go.kr/LSW/flDownload.do?bylClsCd=110202&flSeq=153264663&gubun=" target="_blank" rel="noopener">
             <span>법정서식</span>
-            <strong>공단이관·자체보관 신청서</strong>
-            <p>별지 제36호서식입니다. 자체보관을 신청할 때는 보관기간·장소·책임자도 작성합니다.</p>
+            <strong>신청서 · 이관목록표 · 분실/훼손목록표</strong>
+            <p>별지 제36호서식에 신청서와 두 종류의 목록표가 함께 포함되어 있습니다.</p>
             <b>공식 서식 열기 →</b>
           </a>
-          <div class="form-card muted">
-            <span>지사 서식</span>
+          <a class="form-card" href="forms/authorization.html" target="_blank" rel="noopener">
+            <span>별지 제14호</span>
             <strong>위임장</strong>
-            <p>대리인이 신청하는 경우 사용하는 서식입니다.</p>
-            <b>추후 파일 연결 예정</b>
-          </div>
-          <div class="form-card muted">
-            <span>지사 서식</span>
-            <strong>확인서 [별지 제2호]</strong>
-            <p>전건 분실은 분실·훼손 내용, 급여제공이력 없음은 제공이력이 없다는 내용을 작성합니다.</p>
-            <b>추후 파일 연결 예정</b>
-          </div>
+            <p>대표자가 아닌 대리인이 신청할 때 작성합니다.</p>
+            <b>바로 보기 · 인쇄 →</b>
+          </a>
+          <a class="form-card" href="forms/confirmation.html" target="_blank" rel="noopener">
+            <span>별지 제2호</span>
+            <strong>확인서</strong>
+            <p>전건 분실 또는 급여제공이력 없음에 해당할 때 작성합니다.</p>
+            <b>바로 보기 · 인쇄 →</b>
+          </a>
         </div>
       </div>
     </section>
@@ -234,22 +227,43 @@
           <p>실제 이관 수량은 신청서와 이관 목록표에 적은 수량과 일치하도록 최종 확인하세요.</p>
         </div>
 
-        <div class="binding-box">
-          <div class="field">
-            <label for="year">운영연도</label>
-            <select id="year">
-              <option>2026년</option><option>2025년</option><option>2024년</option><option>2023년</option><option>2022년</option><option>2021년</option>
-            </select>
+        <div class="binding-select-panel">
+          <div class="binding-select-group">
+            <div class="binding-select-head">
+              <div><span>📅</span><strong>운영기간</strong><small>복수선택 가능</small></div>
+              <button type="button" id="clearBindingBtn" class="mini-clear">전체 해제</button>
+            </div>
+            <div class="choice-chip-grid" id="yearChoices">
+              <label class="choice-chip"><input type="checkbox" value="2021년"><span>2021년</span></label>
+              <label class="choice-chip"><input type="checkbox" value="2022년"><span>2022년</span></label>
+              <label class="choice-chip"><input type="checkbox" value="2023년"><span>2023년</span></label>
+              <label class="choice-chip"><input type="checkbox" value="2024년"><span>2024년</span></label>
+              <label class="choice-chip"><input type="checkbox" value="2025년"><span>2025년</span></label>
+              <label class="choice-chip"><input type="checkbox" value="2026년"><span>2026년</span></label>
+            </div>
           </div>
-          <div class="field">
-            <label for="service">급여종류</label>
-            <select id="service">
-              <option>방문요양</option><option>방문목욕</option><option>방문간호</option><option>복지용구</option><option>주야간보호</option><option>주야간보호 치매전담실</option><option>단기보호</option><option>노인요양시설</option><option>노인요양시설 치매전담실</option><option>공동생활가정</option>
-            </select>
+
+          <div class="binding-select-group">
+            <div class="binding-select-head">
+              <div><span>🏷️</span><strong>급여종류</strong><small>복수선택 가능</small></div>
+            </div>
+            <div class="choice-chip-grid service-chips" id="serviceChoices">
+              <label class="choice-chip"><input type="checkbox" value="방문요양"><span>방문요양</span></label>
+              <label class="choice-chip"><input type="checkbox" value="방문목욕"><span>방문목욕</span></label>
+              <label class="choice-chip"><input type="checkbox" value="방문간호"><span>방문간호</span></label>
+              <label class="choice-chip"><input type="checkbox" value="복지용구"><span>복지용구</span></label>
+              <label class="choice-chip"><input type="checkbox" value="주야간보호"><span>주야간보호</span></label>
+              <label class="choice-chip"><input type="checkbox" value="주야간보호 치매전담실"><span>주야간보호 치매전담실</span></label>
+              <label class="choice-chip"><input type="checkbox" value="단기보호"><span>단기보호</span></label>
+              <label class="choice-chip"><input type="checkbox" value="노인요양시설"><span>노인요양시설</span></label>
+              <label class="choice-chip"><input type="checkbox" value="노인요양시설 치매전담실"><span>노인요양시설 치매전담실</span></label>
+              <label class="choice-chip"><input type="checkbox" value="공동생활가정"><span>공동생활가정</span></label>
+            </div>
           </div>
-          <button type="button" class="make-label" id="makeLabelBtn">편철 순서 확인</button>
+          <button type="button" class="make-label wide" id="makeLabelBtn">편철 구조 확인하기</button>
+          <div id="bindingError" class="binding-error hidden">운영기간과 급여종류를 각각 1개 이상 선택해 주세요.</div>
         </div>
-        <div id="labelResult" class="label-result hidden"></div>
+        <div id="labelResult" class="binding-results hidden"></div>
 
         <div class="exclude-box">
           <div class="exclude-badge">이관 제외</div>

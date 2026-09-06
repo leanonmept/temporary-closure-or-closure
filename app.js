@@ -18,15 +18,17 @@ const TYPES = {
     tag: '자료를 전부 잃어버렸어요',
     docs: [
       '공단이관·자체보관 신청서',
+      '장기요양급여 제공자료 이관 목록표',
       '장기요양급여 제공자료 분실 및 훼손 목록표',
       '확인서 [별지 제2호 서식] — 분실·훼손 경위와 내용을 작성',
       '대리 신청 시 위임장 등 필요한 서류'
     ],
     flows: [
       ['신청서 작성', '공단이관 신청서를 작성합니다.'],
-      ['분실 및 훼손 목록표 작성', '분실·훼손된 이관대상 자료의 내역을 확인하여 목록표에 작성합니다.'],
+      ['이관 목록표 작성', '이관대상 자료의 기본 내역을 이관 목록표에 작성합니다.'],
+      ['분실 및 훼손 목록표 작성', '분실·훼손된 이관대상 자료의 내역을 확인하여 별도 목록표에 작성합니다.'],
       ['확인서 작성', '확인서의 분실·훼손 해당 항목을 확인하고, 어떤 자료를 어떤 경위로 분실·훼손했는지 구체적으로 작성합니다.'],
-      ['공단 제출 및 확인', '신청서·분실 및 훼손 목록표·확인서를 관할 지사에 제출합니다.'],
+      ['공단 제출 및 확인', '신청서·이관 목록표·분실 및 훼손 목록표·확인서를 관할 지사에 제출합니다.'],
       ['접수증 수령 및 후속 신고', '공단 확인 후 접수증을 받아 관할 시·군·구 휴·폐업 신고 등 후속 절차를 진행합니다.']
     ],
     tip: '전건 분실은 단순히 “자료가 없음”으로 처리되는 유형이 아닙니다. 자료의 기록·관리 또는 이관 의무 위반이 인정되면 과태료가 부과될 수 있습니다.'
@@ -161,8 +163,8 @@ const SERVICE_GUIDES = {
 
 const COMMON_CHECKS = [
   '공단이관·자체보관 신청서를 작성했습니다.',
-  '기관 상황에 맞는 목록표를 작성했습니다.',
-  '신청서·목록표의 수량과 실제 자료를 대조했습니다.',
+  '장기요양급여 제공자료 이관 목록표를 작성했습니다.',
+  '신청서·이관 목록표의 수량과 실제 자료를 대조했습니다.',
   '대리 방문인 경우 위임장 등 필요한 서류를 확인했습니다.',
   '공단에서 안내한 접수 또는 허가 결과를 확인했습니다.',
   '관할 시·군·구 휴·폐업 신고 등 후속 절차를 확인했습니다.'
@@ -297,7 +299,13 @@ function renderFlow(t){
 
 function renderDocs(t){
   $('#selectedDocTitle').textContent=`${t.name} 준비서류`;
-  $('#selectedDocList').innerHTML=t.docs.map(d=>`<li>${d}</li>`).join('');
+  const docLink = (d) => {
+    if(d.includes('확인서')) return `<a class="inline-doc-link" href="forms/confirmation.html" target="_blank" rel="noopener">${d}</a>`;
+    if(d.includes('위임장')) return `<a class="inline-doc-link" href="forms/authorization.html" target="_blank" rel="noopener">${d}</a>`;
+    if(d.includes('신청서') || d.includes('이관 목록표') || d.includes('분실 및 훼손 목록표')) return `<a class="inline-doc-link" href="https://www.law.go.kr/LSW/flDownload.do?bylClsCd=110202&flSeq=153264663&gubun=" target="_blank" rel="noopener">${d}</a>`;
+    return d;
+  };
+  $('#selectedDocList').innerHTML=t.docs.map(d=>`<li>${docLink(d)}</li>`).join('');
 
   const help = $('#docHelp');
   if(typeKey==='lost'){
@@ -338,6 +346,7 @@ function checkItems(){
     if(operation==='active') extras.push('잔여자료 추가 이관 후 최종 이관완료 여부를 확인했습니다.');
   }
   if(typeKey==='lost'){
+    extras.push('이관 목록표를 작성했습니다.');
     extras.push('분실 및 훼손 목록표를 작성했습니다.');
     extras.push('확인서에 분실·훼손 자료와 경위를 작성했습니다.');
     extras.push('과태료가 부과될 수 있다는 안내를 확인했습니다.');
@@ -376,11 +385,31 @@ $('#changeBtn').addEventListener('click',()=>{ scrollToEl($('#start')); });
 $('#resetBtn').addEventListener('click',()=>{business=null;typeKey=null;operation=null;$$('[data-business], [data-operation]').forEach(b=>b.classList.remove('selected'));$('#typeSection').classList.add('hidden');$('#operationSection').classList.add('hidden');$('#resultSection').classList.add('hidden');$$('[data-content]').forEach(el=>el.classList.add('hidden'));scrollToEl($('#start'));});
 $('#fontBtn').addEventListener('click',()=>{const on=document.body.classList.toggle('large-text');$('#fontBtn').setAttribute('aria-pressed',String(on));$('#fontBtn').textContent=on?'가− 기본 글자':'가+ 글자 크게';});
 $('#makeLabelBtn').addEventListener('click',()=>{
-  const y=$('#year').value, s=$('#service').value;
-  const guide=SERVICE_GUIDES[s];
-  const items=guide.items.map(item=>`<li class="guide-row"><span class="guide-no">${item[0]}</span><div><strong>${item[1]}</strong><p>${item[2]}</p></div></li>`).join('');
-  const nurse=s==='방문간호'?'<div class="service-alert"><strong>방문간호 확인</strong><p>방문간호지시서를 별도 항목으로 반드시 확인하세요.</p></div>':'';
-  $('#labelResult').innerHTML=`<div class="label-head"><span>선택한 묶음</span><strong>${y} · ${s}</strong><p>${guide.note}</p></div><ol class="service-guide">${items}</ol>${nurse}<div class="label-finish"><b>마지막 확인</b><p>수급자별 자료를 정리한 뒤 이관 목록표의 인원·권수·매수와 실제 자료가 일치하는지 대조하세요.</p></div>`;
+  const years=$$('#yearChoices input:checked').map(i=>i.value);
+  const services=$$('#serviceChoices input:checked').map(i=>i.value);
+  const err=$('#bindingError');
+  if(!years.length || !services.length){
+    err.classList.remove('hidden');
+    $('#labelResult').classList.add('hidden');
+    return;
+  }
+  err.classList.add('hidden');
+  const yearText=years.join(' · ');
+  const cards=services.map(s=>{
+    const guide=SERVICE_GUIDES[s];
+    const items=guide.items.map(item=>`<li class="guide-row"><span class="guide-no">${item[0]}</span><div><strong>${item[1]}</strong><p>${item[2]}</p></div></li>`).join('');
+    const nurse=s==='방문간호'?'<div class="service-alert"><strong>방문간호 확인</strong><p>방문간호지시서를 별도 항목으로 반드시 확인하세요.</p></div>':'';
+    return `<article class="binding-result-card"><div class="label-head"><span>선택한 편철 묶음</span><strong>${s}</strong><p><b>${yearText}</b> · 선택한 각 연도별로 같은 순서로 따로 정리합니다.</p></div><p class="guide-note">${guide.note}</p><ol class="service-guide">${items}</ol>${nurse}</article>`;
+  }).join('');
+  $('#labelResult').innerHTML=`<div class="binding-result-summary"><b>${years.length}개 연도 · ${services.length}개 급여종류 선택</b><p>아래 급여종류별 순서를 참고해 선택한 각 연도 자료를 따로 편철하세요.</p></div>${cards}<div class="label-finish"><b>마지막 확인</b><p>수급자별 자료를 정리한 뒤 이관 목록표의 인원·권수·매수와 실제 자료가 일치하는지 대조하세요.</p></div>`;
   $('#labelResult').classList.remove('hidden');
+  setTimeout(()=>scrollToEl($('#labelResult')),60);
 });
+$('#clearBindingBtn').addEventListener('click',()=>{
+  $$('#yearChoices input, #serviceChoices input').forEach(i=>i.checked=false);
+  $('#bindingError').classList.add('hidden');
+  $('#labelResult').classList.add('hidden');
+  $('#labelResult').innerHTML='';
+});
+$$('#yearChoices input, #serviceChoices input').forEach(i=>i.addEventListener('change',()=>$('#bindingError').classList.add('hidden')));
 $('#clearChecks').addEventListener('click',()=>{if(!business||!typeKey)return;localStorage.removeItem(`hyupeup-check-${business}-${typeKey}-${operation||'na'}`);renderChecks();});
