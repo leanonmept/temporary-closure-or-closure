@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#0b5cab" />
   <meta name="description" content="장기요양기관 휴업·폐업 자료이관 절차를 쉽게 확인하는 안내 사이트" />
   <title>장기요양기관 휴·폐업 안내</title>
-  <link rel="stylesheet" href="styles-v17.css?v=17" />
+  <link rel="stylesheet" href="styles-v18.css?v=18" />
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" href="icons/icon-192.png" />
 </head>
@@ -430,6 +430,33 @@
       caches.keys().then(keys => Promise.all(keys.filter(k => k.startsWith('hyupeup-guide-')).map(k => caches.delete(k)))).catch(()=>{});
     }
   </script>
-  <script src="app-v17.js?v=17"></script>
+  <script src="app-v18.js?v=18"></script>
+
+  <div class="form-modal hidden" id="formModal" role="dialog" aria-modal="true" aria-labelledby="formModalTitle">
+    <div class="form-modal-backdrop" data-form-close></div>
+    <div class="form-modal-panel">
+      <div class="form-modal-head">
+        <div>
+          <span class="form-modal-kicker" id="formModalKicker">편철 서식</span>
+          <h2 id="formModalTitle">서식 미리보기</h2>
+          <p id="formModalMeta"></p>
+        </div>
+        <button type="button" class="form-modal-close" data-form-close aria-label="서식 미리보기 닫기">×</button>
+      </div>
+      <div class="form-modal-toolbar">
+        <a id="formModalOpen" class="form-toolbar-btn primary" href="#" target="_blank" rel="noopener">PDF 새 창에서 열기</a>
+        <a id="formModalOfficial" class="form-toolbar-btn" href="https://www.nhis.or.kr/lm/lmxsrv/law/lawFullContent.do?SEQ=1637&SEQ_HISTORY=595646" target="_blank" rel="noopener">공단 규정 원문</a>
+        <span class="form-toolbar-note">새 창에서 열면 브라우저의 인쇄/저장 기능을 사용할 수 있습니다.</span>
+      </div>
+      <div class="form-modal-body">
+        <iframe id="formModalFrame" title="별지 서식 PDF 미리보기" loading="lazy"></iframe>
+        <div class="form-frame-fallback">
+          <strong>미리보기가 보이지 않나요?</strong>
+          <span>외부 PDF 차단 환경에서는 위의 <b>PDF 새 창에서 열기</b>를 이용하세요.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
