@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#0b5cab" />
   <meta name="description" content="장기요양기관 휴업·폐업 자료이관 절차를 쉽게 확인하는 안내 사이트" />
   <title>장기요양기관 휴·폐업 안내</title>
-  <link rel="stylesheet" href="styles-v18.css?v=18" />
+  <link rel="stylesheet" href="styles-v23.css?v=23" />
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" href="icons/icon-192.png" />
 </head>
@@ -59,8 +59,30 @@
           <a href="#check" class="overview-card"><b>06</b><strong>확인사항</strong><span>공단 방문 전 빠뜨린 항목이 없는지 최종점검</span></a>
         </div>
         <div class="overview-subrow">
-          <a href="#faq" class="overview-wide"><strong>질문 모아보기</strong><span>자주 헷갈리는 내용을 질문형으로 확인</span></a>
+          <a href="#question-overview" class="overview-wide"><strong>질문 한눈에 보기</strong><span>궁금한 질문을 고르면 답변이 바로 열립니다</span></a>
           <a href="#binding" class="overview-wide"><strong>기록물 편철 순서 가이드</strong><span>운영기간·급여종류 복수선택 가능</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="question-overview-section" id="question-overview">
+      <div class="shell">
+        <div class="section-heading">
+          <span>질문 한눈에 보기</span>
+          <h2>무엇이 궁금한가요?</h2>
+          <p>질문을 누르면 아래에서 해당 답변을 바로 확인할 수 있습니다.</p>
+        </div>
+        <div class="question-overview-grid">
+          <a href="#faq-start" class="question-overview-card"><b>시작</b><strong>휴·폐업 준비는 무엇부터 하나요?</strong></a>
+          <a href="#faq-basic-docs" class="question-overview-card"><b>서류</b><strong>기본으로 작성하는 서류는 무엇인가요?</strong></a>
+          <a href="#faq-agent" class="question-overview-card"><b>대리인</b><strong>대리인이 제출하면 무엇이 필요한가요?</strong></a>
+          <a href="#faq-loss" class="question-overview-card"><b>분실</b><strong>자료를 전부 분실했다면 어떻게 하나요?</strong></a>
+          <a href="#faq-no-history" class="question-overview-card"><b>이력 없음</b><strong>급여제공이력 없음은 어떤 경우인가요?</strong></a>
+          <a href="#faq-self-storage" class="question-overview-card"><b>휴업</b><strong>휴업 중 기관에서 직접 보관할 수 있나요?</strong></a>
+          <a href="#faq-transfer" class="question-overview-card"><b>이관</b><strong>어떤 자료를 공단에 이관하나요?</strong></a>
+          <a href="#faq-exclusion" class="question-overview-card"><b>제외</b><strong>청구서·청구명세서도 이관하나요?</strong></a>
+          <a href="#faq-binding" class="question-overview-card"><b>편철</b><strong>기록물 편철 순서는 어떻게 확인하나요?</strong></a>
+          <a href="#transfer-list-example" class="question-overview-card"><b>작성 예시</b><strong>이관 목록표는 어느 칸에 적나요?</strong></a>
         </div>
       </div>
     </section>
@@ -243,6 +265,60 @@
       </div>
     </section>
 
+    <section class="transfer-example-section" id="transfer-list-example">
+      <div class="shell">
+        <div class="section-heading">
+          <span>이관 목록표 작성 예시</span>
+          <h2>방문요양은 이렇게 적습니다</h2>
+          <p>별지 제36호서식의 장기요양급여 제공자료 이관 목록표를 기준으로 한 기재 예시입니다.</p>
+        </div>
+
+        <div class="example-rule-grid">
+          <article><b>공통서류</b><p><strong>인정번호</strong> 칸에 서류명을 적고, 매수는 <strong>② 장기요양급여제공기록지 등</strong> 칸에 적습니다.</p></article>
+          <article><b>수급자별 서류</b><p>공통서류 다음 줄부터 <strong>연번·장기요양인정번호·성명</strong>을 적고 계약서·기록지·명세서 칸에 각각 매수를 적습니다.</p></article>
+        </div>
+
+        <div class="transfer-table-wrap" role="region" aria-label="방문요양 이관 목록표 작성 예시" tabindex="0">
+          <table class="transfer-example-table">
+            <caption>방문요양 이관 목록표 기재 예시 — 숫자는 이해를 돕기 위한 가상 매수입니다.</caption>
+            <thead>
+              <tr>
+                <th scope="col">연번</th>
+                <th scope="col">인정번호</th>
+                <th scope="col">성명</th>
+                <th scope="col">① 계약서</th>
+                <th scope="col" class="target-column">② 기록지 등</th>
+                <th scope="col">③ 방문간호<br>지시서</th>
+                <th scope="col">④ 명세서</th>
+                <th scope="col">⑤ 전자문서</th>
+                <th scope="col">비고</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="total-row"><th colspan="3" scope="row">총계(예시)</th><td>36</td><td class="target-column">248</td><td>0</td><td>48</td><td>0</td><td></td></tr>
+              <tr class="common-row"><td></td><th scope="row">배상책임보험 증서</th><td></td><td></td><td class="target-column"><strong>1</strong></td><td></td><td></td><td></td><td>공통서류</td></tr>
+              <tr class="common-row"><td></td><th scope="row">직원 근무일지</th><td></td><td></td><td class="target-column"><strong>12</strong></td><td></td><td></td><td></td><td>공통서류</td></tr>
+              <tr class="common-row"><td></td><th scope="row">프로그램관리자·사회복지사<br>업무수행일지</th><td></td><td></td><td class="target-column"><strong>24</strong></td><td></td><td></td><td></td><td>공통서류</td></tr>
+              <tr class="common-row"><td></td><th scope="row">교육시간 관리대장</th><td></td><td></td><td class="target-column"><strong>3</strong></td><td></td><td></td><td></td><td>공통서류</td></tr>
+              <tr class="recipient-row"><td><strong>1</strong></td><td><strong>L0000000</strong></td><td>김철수</td><td><strong>9</strong></td><td class="target-column"><strong>52</strong></td><td></td><td><strong>12</strong></td><td></td><td></td></tr>
+              <tr class="recipient-row"><td><strong>2</strong></td><td><strong>L1111111</strong></td><td>이영희</td><td><strong>9</strong></td><td class="target-column"><strong>52</strong></td><td></td><td><strong>12</strong></td><td></td><td></td></tr>
+              <tr class="recipient-row"><td><strong>3</strong></td><td><strong>L2222222</strong></td><td>박영수</td><td><strong>9</strong></td><td class="target-column"><strong>52</strong></td><td></td><td><strong>12</strong></td><td></td><td></td></tr>
+              <tr class="recipient-row"><td><strong>4</strong></td><td><strong>L3333333</strong></td><td>홍길동</td><td><strong>9</strong></td><td class="target-column"><strong>52</strong></td><td></td><td><strong>12</strong></td><td></td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="example-cautions">
+          <strong>작성할 때 주의하세요</strong>
+          <ul>
+            <li>위 숫자와 수급자 정보는 작성 위치를 보여주기 위한 예시이며, 실제 보유자료를 세어 숫자만 기재합니다.</li>
+            <li>공통서류 4종도 ② 기록지 등 칸의 총계에 포함하고, 수급자별 기록지 매수와 합산합니다.</li>
+            <li>방문요양에는 방문간호지시서가 없으므로 ③ 칸은 비워 두거나 관할 지사 안내에 따라 0으로 표시합니다.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <section class="content soft hidden" id="records" data-content>
       <div class="shell">
         <div class="section-heading">
@@ -366,20 +442,20 @@
     <section class="faq-section" id="faq">
       <div class="shell">
         <div class="section-heading">
-          <span>질문 모아보기</span>
+          <span>질문과 답변</span>
           <h2>자주 확인하는 질문</h2>
           <p>세부 업무내용을 질문형으로 다시 정리했습니다.</p>
         </div>
         <div class="faq-list">
-          <details><summary>휴·폐업 준비를 시작하면 무엇을 먼저 해야 하나요?</summary><p>실무상 공단에 자료이관 또는 해당 유형의 접수를 진행해 접수증을 받은 뒤, 그 접수증을 포함하여 관할 시·군·구 휴·폐업 신고를 진행합니다. 기관이 아직 급여제공 중인 경우에는 기존 자료를 일부이관하고, 급여제공 종료 후 새로 발생한 자료를 추가 이관하여 이관완료로 처리합니다.</p></details>
-          <details><summary>모든 경우에 기본으로 작성하는 서류는 무엇인가요?</summary><p>공단이관·자체보관 신청서와 이관 목록표를 기본으로 작성합니다. 분실·훼손 자료가 있으면 분실 및 훼손 목록표를 추가하고, 전건 분실 또는 급여제공이력 없음에 해당하면 확인서를 함께 작성합니다.</p></details>
-          <details><summary>대표자가 아닌 대리인이 제출하면 무엇이 필요한가요?</summary><p>위임장을 작성해야 합니다. 개인기관과 법인기관은 위임장에 사용하는 인감 및 확인서류가 다르므로 ‘신청인 서류’에서 대표자/대리인과 개인/법인을 선택해 확인하세요.</p></details>
-          <details><summary>전건 분실이면 어떻게 처리하나요?</summary><p>신청서, 이관 목록표, 분실 및 훼손 목록표, 확인서를 작성합니다. 확인서에는 분실·훼손된 자료와 경위를 기재합니다. 자료 기록·관리 또는 이관 의무 위반이 인정되는 경우 과태료가 부과될 수 있습니다.</p></details>
-          <details><summary>급여제공이력 없음은 어떤 경우인가요?</summary><p>최근 5년간 장기요양급여 제공이력이 없거나, 휴업 후 새로운 급여제공이력 없이 폐업을 신고하는 경우입니다. 신청서, 이관 목록표, 확인서를 작성하며 확인서에는 급여제공내역이 없다는 내용을 기재합니다.</p></details>
-          <details><summary>휴업 중 자료를 기관에서 직접 보관할 수 있나요?</summary><p>휴업기관은 휴업 예정일 전에 자체보관을 신청하고 공단의 허가를 받은 경우에 자체보관할 수 있습니다. 신청서에는 보관기간, 보관장소, 보관책임자와 연락처를 작성합니다.</p></details>
-          <details><summary>어떤 자료가 공단 이관대상인가요?</summary><p>장기요양급여 계약 관련 서류, 급여제공기록지 등 급여비용 산정 관련 서류, 방문간호지시서(해당 기관), 급여비용 명세서 부본 또는 본인부담금수납대장, 관련 전자문서를 확인합니다.</p></details>
-          <details><summary>급여비용 청구서·청구명세서도 이관하나요?</summary><p>보존자료에는 포함되지만 휴·폐업 시 공단 이관 대상에서는 제외됩니다. 이관 대상과 기관 자체 보존대상을 혼동하지 않도록 구분하세요.</p></details>
-          <details><summary>편철 순서는 어떻게 확인하나요?</summary><p>운영연도와 급여종류를 복수로 선택한 뒤 ‘편철 구조 확인하기’를 누르면 급여종류별 정리 순서를 확인할 수 있습니다.</p></details>
+          <details id="faq-start"><summary>휴·폐업 준비를 시작하면 무엇을 먼저 해야 하나요?</summary><p>실무상 공단에 자료이관 또는 해당 유형의 접수를 진행해 접수증을 받은 뒤, 그 접수증을 포함하여 관할 시·군·구 휴·폐업 신고를 진행합니다. 기관이 아직 급여제공 중인 경우에는 기존 자료를 일부이관하고, 급여제공 종료 후 새로 발생한 자료를 추가 이관하여 이관완료로 처리합니다.</p></details>
+          <details id="faq-basic-docs"><summary>모든 경우에 기본으로 작성하는 서류는 무엇인가요?</summary><p>공단이관·자체보관 신청서와 이관 목록표를 기본으로 작성합니다. 분실·훼손 자료가 있으면 분실 및 훼손 목록표를 추가하고, 전건 분실 또는 급여제공이력 없음에 해당하면 확인서를 함께 작성합니다.</p></details>
+          <details id="faq-agent"><summary>대표자가 아닌 대리인이 제출하면 무엇이 필요한가요?</summary><p>위임장을 작성해야 합니다. 개인기관과 법인기관은 위임장에 사용하는 인감 및 확인서류가 다르므로 ‘신청인 서류’에서 대표자/대리인과 개인/법인을 선택해 확인하세요.</p></details>
+          <details id="faq-loss"><summary>전건 분실이면 어떻게 처리하나요?</summary><p>신청서, 이관 목록표, 분실 및 훼손 목록표, 확인서를 작성합니다. 확인서에는 분실·훼손된 자료와 경위를 기재합니다. 자료 기록·관리 또는 이관 의무 위반이 인정되는 경우 과태료가 부과될 수 있습니다.</p></details>
+          <details id="faq-no-history"><summary>급여제공이력 없음은 어떤 경우인가요?</summary><p>최근 5년간 장기요양급여 제공이력이 없거나, 휴업 후 새로운 급여제공이력 없이 폐업을 신고하는 경우입니다. 신청서, 이관 목록표, 확인서를 작성하며 확인서에는 급여제공내역이 없다는 내용을 기재합니다.</p></details>
+          <details id="faq-self-storage"><summary>휴업 중 자료를 기관에서 직접 보관할 수 있나요?</summary><p>휴업기관은 휴업 예정일 전에 자체보관을 신청하고 공단의 허가를 받은 경우에 자체보관할 수 있습니다. 신청서에는 보관기간, 보관장소, 보관책임자와 연락처를 작성합니다.</p></details>
+          <details id="faq-transfer"><summary>어떤 자료가 공단 이관대상인가요?</summary><p>장기요양급여 계약 관련 서류, 급여제공기록지 등 급여비용 산정 관련 서류, 방문간호지시서(해당 기관), 급여비용 명세서 부본 또는 본인부담금수납대장, 관련 전자문서를 확인합니다.</p></details>
+          <details id="faq-exclusion"><summary>급여비용 청구서·청구명세서도 이관하나요?</summary><p>보존자료에는 포함되지만 휴·폐업 시 공단 이관 대상에서는 제외됩니다. 이관 대상과 기관 자체 보존대상을 혼동하지 않도록 구분하세요.</p></details>
+          <details id="faq-binding"><summary>편철 순서는 어떻게 확인하나요?</summary><p>운영연도와 급여종류를 복수로 선택한 뒤 ‘편철 구조 확인하기’를 누르면 급여종류별 정리 순서를 확인할 수 있습니다.</p></details>
         </div>
       </div>
     </section>
@@ -430,7 +506,7 @@
       caches.keys().then(keys => Promise.all(keys.filter(k => k.startsWith('hyupeup-guide-')).map(k => caches.delete(k)))).catch(()=>{});
     }
   </script>
-  <script src="app-v18.js?v=18"></script>
+  <script src="app-v23.js?v=23"></script>
 
   <div class="form-modal hidden" id="formModal" role="dialog" aria-modal="true" aria-labelledby="formModalTitle">
     <div class="form-modal-backdrop" data-form-close></div>
