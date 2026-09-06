@@ -7,6 +7,8 @@
   <meta name="description" content="장기요양기관 휴업·폐업 자료이관 절차를 쉽게 확인하는 안내 사이트" />
   <title>장기요양기관 휴·폐업 안내</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icons/icon-192.png" />
 </head>
 <body>
   <a class="skip" href="#main">본문 바로가기</a>
@@ -27,9 +29,9 @@
   <main id="main">
     <section class="hero">
       <div class="shell">
-        <span class="hero-chip">처음 하셔도 순서대로 따라오세요</span>
-        <h2>휴업·폐업,<br><strong>무엇부터 해야 할까요?</strong></h2>
-        <p class="hero-text">기관의 상황을 선택하면 공단 접수부터 후속 신고까지 필요한 서류와 실제 처리 순서를 안내합니다.</p>
+        <span class="hero-chip">장기요양기관 휴·폐업 업무를 한눈에</span>
+        <h2>휴업·폐업 준비,<br><strong>순서대로 확인하세요</strong></h2>
+        <p class="hero-text">기관의 상황을 선택하면 자료이관, 제출서류, 신청인 확인서류, 편철방법과 후속 신고까지 순서대로 안내합니다.</p>
 
         <div class="core-alert">
           <span class="alert-icon" aria-hidden="true">!</span>
@@ -37,6 +39,28 @@
             <strong>핵심 안내</strong>
             <p><b>공단에 먼저 접수·이관하여 접수증을 받은 뒤</b> 관할 시·군·구 휴·폐업 신고를 진행하는 실제 업무 흐름을 기준으로 안내합니다.</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="overview-section" id="overview">
+      <div class="shell">
+        <div class="section-heading">
+          <span>업무별 안내</span>
+          <h2>필요한 내용을 빠르게 찾아보세요</h2>
+          <p>기존 휴·폐업 안내의 주요 항목을 모두 유지하고, 실제 처리 순서에 맞게 다시 배치했습니다.</p>
+        </div>
+        <div class="overview-grid">
+          <a href="#start" class="overview-card"><b>01</b><strong>신청접수</strong><span>휴업·폐업 구분부터 공단 접수증 수령까지</span></a>
+          <a href="#documents" class="overview-card"><b>02</b><strong>제출서류</strong><span>신청서·목록표·확인서·위임장과 신청인 서류</span></a>
+          <a href="#binding" class="overview-card"><b>03</b><strong>편철방법</strong><span>연도·급여종류를 선택해 편철 순서 확인</span></a>
+          <a href="#records" class="overview-card"><b>04</b><strong>자료이관</strong><span>이관대상·이관 제외자료·전자문서 확인</span></a>
+          <a href="#forms" class="overview-card"><b>05</b><strong>제출서식</strong><span>신청서·목록표·확인서·위임장 바로 확인</span></a>
+          <a href="#check" class="overview-card"><b>06</b><strong>확인사항</strong><span>공단 방문 전 빠뜨린 항목이 없는지 최종점검</span></a>
+        </div>
+        <div class="overview-subrow">
+          <a href="#faq" class="overview-wide"><strong>질문 모아보기</strong><span>자주 헷갈리는 내용을 질문형으로 확인</span></a>
+          <a href="#binding" class="overview-wide"><strong>기록물 편철 순서 가이드</strong><span>운영기간·급여종류 복수선택 가능</span></a>
         </div>
       </div>
     </section>
@@ -49,14 +73,12 @@
         </div>
         <div class="big-choice-grid" role="group" aria-label="휴업 또는 폐업 선택">
           <button type="button" class="big-choice" data-business="close">
-            <span class="choice-icon">종료</span>
             <strong>폐업</strong>
-            <small>기관 운영을 종료합니다</small>
+            <small>장기요양기관 운영을 종료하는 경우</small>
           </button>
           <button type="button" class="big-choice" data-business="pause">
-            <span class="choice-icon">휴식</span>
             <strong>휴업</strong>
-            <small>일정 기간 운영을 중단합니다</small>
+            <small>일정 기간 장기요양기관 운영을 중단하는 경우</small>
           </button>
         </div>
       </div>
@@ -78,19 +100,17 @@
       <div class="shell">
         <div class="section-heading">
           <span>STEP 3</span>
-          <h2>현재도 장기요양급여를 제공하고 있나요?</h2>
-          <p>자료이관을 선택한 기관만 확인합니다. <b>운영 중인지, 이미 종료했는지</b>에 따라 일부이관 또는 이관완료로 안내합니다.</p>
+          <h2>현재 장기요양급여를 제공하고 있나요?</h2>
+          <p>자료이관을 선택한 경우 확인합니다. <b>현재 급여제공 여부</b>에 따라 일부이관 또는 이관완료 절차가 달라집니다.</p>
         </div>
         <div class="big-choice-grid" role="group" aria-label="현재 운영 여부 선택">
           <button type="button" class="big-choice" data-operation="active">
-            <span class="choice-icon">운영 중</span>
-            <strong>아직 급여를 제공하고 있어요</strong>
-            <small>휴·폐업 예정일까지 운영이 계속되는 경우</small>
+            <strong>현재 급여제공 중</strong>
+            <small>휴·폐업 예정일까지 급여제공이 계속되는 경우</small>
           </button>
           <button type="button" class="big-choice" data-operation="ended">
-            <span class="choice-icon">운영 종료</span>
-            <strong>이미 급여 제공을 종료했어요</strong>
-            <small>더 이상 새 급여제공자료가 생기지 않는 경우</small>
+            <strong>현재 급여제공하지 않음</strong>
+            <small>더 이상 새로운 급여제공자료가 발생하지 않는 경우</small>
           </button>
         </div>
       </div>
@@ -110,6 +130,7 @@
         <nav class="jump-nav" aria-label="바로가기">
           <button type="button" data-jump="flow">처리 순서</button>
           <button type="button" data-jump="documents">준비 서류</button>
+          <button type="button" data-jump="applicantDocs">신청인 서류</button>
           <button type="button" data-jump="forms">제출 서식</button>
           <button type="button" data-jump="records">이관 자료</button>
           <button type="button" data-jump="binding">편철 가이드</button>
@@ -152,7 +173,41 @@
         <div class="doc-help hidden" id="docHelp"></div>
 
         <div class="caution-line">
-          <strong>확인서</strong>는 전건 분실 또는 급여제공이력 없음에 해당할 때 함께 작성합니다. 대리 신청은 위임장 등 필요한 서류를 확인하세요.
+          <strong>확인서</strong>는 전건 분실 또는 급여제공이력 없음에 해당할 때 함께 작성합니다.
+        </div>
+
+        <div class="applicant-box" id="applicantDocs">
+          <div class="section-heading compact">
+            <span>신청인 확인서류</span>
+            <h2>대표자가 직접 방문하나요?</h2>
+            <p>대표자 방문인지 대리인 방문인지, 기관이 개인인지 법인인지에 따라 확인서류가 달라집니다.</p>
+          </div>
+          <div class="applicant-step">
+            <strong>1. 방문자 선택</strong>
+            <div class="segmented" role="group" aria-label="방문자 선택">
+              <button type="button" data-visitor="rep">대표자 직접 방문</button>
+              <button type="button" data-visitor="agent">대리인 방문</button>
+            </div>
+          </div>
+          <div class="applicant-step hidden" id="entityStep">
+            <strong>2. 기관 구분</strong>
+            <div class="segmented" role="group" aria-label="기관 구분">
+              <button type="button" data-entity="individual">개인기관</button>
+              <button type="button" data-entity="corporate">법인기관</button>
+            </div>
+          </div>
+          <div class="applicant-result hidden" id="applicantResult"></div>
+          <div class="applicant-plain-guide">
+            <strong>대리인이 제출하는 경우</strong>
+            <p>대표자가 직접 방문하지 않는 경우에는 <b>위임장</b>을 작성합니다. 개인기관과 법인기관은 위임장에 사용하는 인감과 확인서류가 다르므로 아래 선택결과를 확인하세요.</p>
+          </div>
+          <details class="details applicant-details">
+            <summary>대리 신청 서류의 근거와 유의사항</summary>
+            <div>
+              <p>장기요양급여 제공자료 공단이관·자체보관 신청서(별지 제36호)는 <b>신청인이 대리인인 경우 위임장</b>을 첨부하도록 정하고 있습니다.</p>
+              <p>개인·법인별 인감증명서와 신분증 확인은 공단의 장기요양기관 방문접수 기준을 함께 반영한 안내입니다. 실제 제출 전 관할 지사의 최신 접수기준을 확인하세요.</p>
+            </div>
+          </details>
         </div>
       </div>
     </section>
@@ -193,6 +248,12 @@
         <div class="section-heading">
           <span>이관 자료</span>
           <h2>어떤 기록물을 확인해야 하나요?</h2>
+        </div>
+
+        <div class="service-record-note">
+          <strong>장기요양기관의 급여종류에 따라 확인할 자료가 조금씩 다릅니다.</strong>
+          <p>공통 이관범주는 같지만, 방문간호는 방문간호지시서를 별도로 확인하는 등 급여종류별 차이가 있습니다. 아래 편철 가이드에서 운영한 급여를 선택하면 해당 자료를 따로 보여드립니다.</p>
+          <a href="#binding">급여종류별 자료 확인하기 →</a>
         </div>
 
         <div class="record-grid">
@@ -287,19 +348,67 @@
           <h2>방문 전에 한 번 더 확인하세요</h2>
           <p>체크한 내용은 이 기기에서만 임시 저장됩니다.</p>
         </div>
+        <div class="check-stage-grid" aria-label="확인사항 8단계">
+          <div><b>01</b><span>휴업·폐업 구분</span></div>
+          <div><b>02</b><span>공단 자료이관</span></div>
+          <div><b>03</b><span>신청인 서류</span></div>
+          <div><b>04</b><span>이관자료 확인</span></div>
+          <div><b>05</b><span>이관 제외자료</span></div>
+          <div><b>06</b><span>이관자료 편철</span></div>
+          <div><b>07</b><span>접수증·시군구 신고</span></div>
+          <div><b>08</b><span>최종점검</span></div>
+        </div>
         <div id="checkList" class="check-list"></div>
         <button type="button" id="clearChecks" class="clear-checks">체크 초기화</button>
       </div>
     </section>
 
-    <section class="contact hidden" id="contact" data-content>
+    <section class="faq-section" id="faq">
+      <div class="shell">
+        <div class="section-heading">
+          <span>질문 모아보기</span>
+          <h2>자주 확인하는 질문</h2>
+          <p>세부 업무내용을 질문형으로 다시 정리했습니다.</p>
+        </div>
+        <div class="faq-list">
+          <details><summary>휴·폐업 준비를 시작하면 무엇을 먼저 해야 하나요?</summary><p>실무상 공단에 자료이관 또는 해당 유형의 접수를 진행해 접수증을 받은 뒤, 그 접수증을 포함하여 관할 시·군·구 휴·폐업 신고를 진행합니다. 기관이 아직 급여제공 중인 경우에는 기존 자료를 일부이관하고, 급여제공 종료 후 새로 발생한 자료를 추가 이관하여 이관완료로 처리합니다.</p></details>
+          <details><summary>모든 경우에 기본으로 작성하는 서류는 무엇인가요?</summary><p>공단이관·자체보관 신청서와 이관 목록표를 기본으로 작성합니다. 분실·훼손 자료가 있으면 분실 및 훼손 목록표를 추가하고, 전건 분실 또는 급여제공이력 없음에 해당하면 확인서를 함께 작성합니다.</p></details>
+          <details><summary>대표자가 아닌 대리인이 제출하면 무엇이 필요한가요?</summary><p>위임장을 작성해야 합니다. 개인기관과 법인기관은 위임장에 사용하는 인감 및 확인서류가 다르므로 ‘신청인 서류’에서 대표자/대리인과 개인/법인을 선택해 확인하세요.</p></details>
+          <details><summary>전건 분실이면 어떻게 처리하나요?</summary><p>신청서, 이관 목록표, 분실 및 훼손 목록표, 확인서를 작성합니다. 확인서에는 분실·훼손된 자료와 경위를 기재합니다. 자료 기록·관리 또는 이관 의무 위반이 인정되는 경우 과태료가 부과될 수 있습니다.</p></details>
+          <details><summary>급여제공이력 없음은 어떤 경우인가요?</summary><p>최근 5년간 장기요양급여 제공이력이 없거나, 휴업 후 새로운 급여제공이력 없이 폐업을 신고하는 경우입니다. 신청서, 이관 목록표, 확인서를 작성하며 확인서에는 급여제공내역이 없다는 내용을 기재합니다.</p></details>
+          <details><summary>휴업 중 자료를 기관에서 직접 보관할 수 있나요?</summary><p>휴업기관은 휴업 예정일 전에 자체보관을 신청하고 공단의 허가를 받은 경우에 자체보관할 수 있습니다. 신청서에는 보관기간, 보관장소, 보관책임자와 연락처를 작성합니다.</p></details>
+          <details><summary>어떤 자료가 공단 이관대상인가요?</summary><p>장기요양급여 계약 관련 서류, 급여제공기록지 등 급여비용 산정 관련 서류, 방문간호지시서(해당 기관), 급여비용 명세서 부본 또는 본인부담금수납대장, 관련 전자문서를 확인합니다.</p></details>
+          <details><summary>급여비용 청구서·청구명세서도 이관하나요?</summary><p>보존자료에는 포함되지만 휴·폐업 시 공단 이관 대상에서는 제외됩니다. 이관 대상과 기관 자체 보존대상을 혼동하지 않도록 구분하세요.</p></details>
+          <details><summary>편철 순서는 어떻게 확인하나요?</summary><p>운영연도와 급여종류를 복수로 선택한 뒤 ‘편철 구조 확인하기’를 누르면 급여종류별 정리 순서를 확인할 수 있습니다.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="privacy-section" id="privacy">
+      <div class="shell privacy-grid">
+        <div>
+          <span class="mini-kicker">개인정보 보호 안내</span>
+          <h2>개인정보나 수급자 정보는 입력하지 마세요</h2>
+          <p>이 안내사이트는 기관명, 담당자명, 연락처, 주민등록번호, 장기요양인정번호 등 개인정보 입력을 요구하지 않습니다. 체크리스트 선택값은 사용 중인 기기의 브라우저에만 임시 저장됩니다.</p>
+        </div>
+        <div class="privacy-items">
+          <p><b>입력하지 말아야 할 정보</b><br>수급자 성명·생년월일·인정번호, 직원 개인정보, 기관 내부 민감정보</p>
+          <p><b>홈 화면 추가</b><br>휴대폰 브라우저의 ‘홈 화면에 추가’를 사용하면 안내사이트를 앱처럼 열 수 있습니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
       <div class="shell contact-inner">
         <div>
           <span>도움이 필요하신가요?</span>
           <h2>방문 전 관할 지사에 확인하세요</h2>
           <p>세부 편철방법과 실제 제출 시 필요한 추가서류는 기관 상황에 따라 달라질 수 있습니다.</p>
         </div>
-        <a href="https://www.nhis.or.kr/nhis/about/retrieveBranchList.do" target="_blank" rel="noopener">공단 지사찾기</a>
+        <div class="contact-links">
+          <a href="https://www.nhis.or.kr/nhis/about/retrieveBranchList.do" target="_blank" rel="noopener">공단 지사찾기</a>
+          <a href="tel:15771000">1577-1000 전화</a>
+        </div>
       </div>
     </section>
   </main>
@@ -307,7 +416,8 @@
   <footer>
     <div class="shell">
       <strong>장기요양기관 휴·폐업 자료이관 안내</strong>
-      <p>국민건강보험공단 자료이관 업무 흐름을 중심으로 안내합니다. 세부 처리기준은 관할 지사 안내를 우선 확인해 주세요.</p>
+      <p>장기요양기관 휴·폐업 자료이관 업무를 쉽게 확인하기 위한 안내입니다. 실제 제출 전 관할 지사의 최신 안내를 확인해 주세요.</p>
+      <p class="footer-small">개인정보 및 민감정보는 입력하지 마세요.</p>
     </div>
   </footer>
 

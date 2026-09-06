@@ -2,26 +2,26 @@ const TYPES = {
   transfer: {
     name: '자료이관',
     desc: '보존 중인 장기요양급여 제공자료를 공단에 실제로 이관하는 경우입니다.',
-    tag: '자료가 남아 있어요',
+    tag: '공단에 자료를 이관하는 경우',
     docs: [
       '공단이관·자체보관 신청서',
       '장기요양급여 제공자료 이관 목록표',
       '실제 이관할 장기요양급여 제공자료',
       '일부 자료가 분실·훼손된 경우: 분실 및 훼손 목록표 추가',
-      '대리 신청 시 위임장 등 필요한 서류'
+      '대리인이 방문하는 경우: 아래 신청인 확인서류를 추가 확인'
     ],
     tip: '자료이관은 기관의 현재 급여제공 여부에 따라 처리상태가 달라집니다. 아직 운영 중이면 일부이관으로 접수증을 먼저 받고, 운영 종료 후 나머지 자료를 추가 이관하여 이관완료로 처리합니다.'
   },
   lost: {
     name: '전건 분실',
     desc: '보존기간 중 이관해야 할 자료가 전부 분실·훼손되어 실제로 이관할 자료가 없는 경우입니다.',
-    tag: '자료를 전부 잃어버렸어요',
+    tag: '이관대상 자료가 전부 분실·훼손된 경우',
     docs: [
       '공단이관·자체보관 신청서',
       '장기요양급여 제공자료 이관 목록표',
       '장기요양급여 제공자료 분실 및 훼손 목록표',
       '확인서 [별지 제2호 서식] — 분실·훼손 경위와 내용을 작성',
-      '대리 신청 시 위임장 등 필요한 서류'
+      '대리인이 방문하는 경우: 아래 신청인 확인서류를 추가 확인'
     ],
     flows: [
       ['신청서 작성', '공단이관 신청서를 작성합니다.'],
@@ -36,12 +36,12 @@ const TYPES = {
   nohistory: {
     name: '급여제공이력 없음',
     desc: '최근 5년간 급여제공이력이 없거나, 휴업 후 새 급여제공이력 없이 폐업을 신고하는 경우입니다.',
-    tag: '최근 5년간 급여이력이 없어요',
+    tag: '최근 5년간 급여제공이력이 없는 경우',
     docs: [
       '공단이관·자체보관 신청서',
       '장기요양급여 제공자료 이관 목록표',
       '확인서 [별지 제2호 서식] — 급여제공이력이 없다는 내용을 작성',
-      '대리 신청 시 위임장 등 필요한 서류'
+      '대리인이 방문하는 경우: 아래 신청인 확인서류를 추가 확인'
     ],
     flows: [
       ['해당 여부 확인', '최근 5년간 장기요양급여 제공이력이 없거나, 휴업 후 새 급여제공이력 없이 폐업하는 경우인지 확인합니다.'],
@@ -56,13 +56,13 @@ const TYPES = {
   self: {
     name: '자체보관',
     desc: '휴업하는 기관이 공단의 허가를 받아 장기요양급여 제공자료를 기관에서 직접 보관하려는 경우입니다.',
-    tag: '휴업 중 기관에서 보관할래요',
+    tag: '휴업 중 자료를 기관에서 보관하는 경우',
     docs: [
       '공단이관·자체보관 신청서 — 자체보관에 체크',
       '장기요양급여 제공자료 이관 목록표',
       '자체보관 계획 — 보관기간·보관장소·보관책임자(성명·전화번호) 기재',
       '분실·훼손 자료가 있는 경우: 분실 및 훼손 목록표 추가',
-      '대리 신청 시 위임장 등 필요한 서류'
+      '대리인이 방문하는 경우: 아래 신청인 확인서류를 추가 확인'
     ],
     flows: [
       ['자체보관 신청서 작성', '별지 제36호서식에서 자체보관에 체크하고 기관 기본정보와 휴업기간을 작성합니다.'],
@@ -173,6 +173,8 @@ const COMMON_CHECKS = [
 let business = null;
 let typeKey = null;
 let operation = null;
+let visitorType = null;
+let entityType = null;
 
 const $ = (s) => document.querySelector(s);
 const $$ = (s) => [...document.querySelectorAll(s)];
@@ -237,7 +239,7 @@ function transferFlow(){
   }
   return [
     ['신청서·이관 목록표 작성', '공단이관 신청서와 이관대상 자료 전체를 기준으로 이관 목록표를 작성합니다.'],
-    ['전체 이관자료 준비', '이미 급여 제공을 종료해 새 자료가 더 발생하지 않으므로 보존 중인 이관대상 자료 전체를 준비합니다.'],
+    ['전체 이관자료 준비', '현재 급여를 제공하지 않아 새 자료가 더 발생하지 않으므로 보존 중인 이관대상 자료 전체를 준비합니다.'],
     ['공단에 전체 자료 이관', '신청서·이관 목록표와 실제 이관대상 자료를 관할 지사에 제출합니다.'],
     ['공단 확인 및 이관완료', '공단에서 신청서·목록표와 실제 자료를 확인하고 이관완료로 처리합니다.'],
     ['접수증 수령 및 후속 신고', '이관완료 후 접수증을 받아 관할 시·군·구 휴·폐업 신고 등 필요한 후속 절차를 진행합니다.']
@@ -246,14 +248,14 @@ function transferFlow(){
 
 function transferIntro(){
   if(operation==='active') return '아직 급여를 제공 중인 기관입니다. 기존 자료를 먼저 일부이관해 접수증을 받고, 운영 종료 후 새로 발생한 나머지 자료까지 추가 이관하여 최종 이관완료로 처리합니다.';
-  return '이미 급여 제공을 종료한 기관입니다. 새 자료가 더 발생하지 않으므로 이관대상 자료 전체를 한 번에 제출하여 바로 이관완료로 처리합니다.';
+  return '현재 장기요양급여를 제공하지 않아 새로운 급여제공자료가 더 발생하지 않는 기관입니다. 이관대상 자료 전체를 제출하여 이관완료로 처리합니다.';
 }
 
 function showResult(){
   const t=TYPES[typeKey];
   const bname=business==='close'?'폐업':'휴업';
   let suffix='';
-  if(typeKey==='transfer') suffix=operation==='active'?' · 아직 운영 중':' · 이미 운영 종료';
+  if(typeKey==='transfer') suffix=operation==='active'?' · 현재 급여제공 중':' · 현재 급여제공하지 않음';
   $('#resultTitle').textContent=`${bname} · ${t.name}${suffix}`;
   $('#resultIntro').textContent=typeKey==='transfer'?transferIntro():t.desc;
   $('#resultSection').classList.remove('hidden');
@@ -262,6 +264,7 @@ function showResult(){
   renderDocs(t);
   renderChecks();
   renderSituationHelp();
+  resetApplicantChoice();
   setTimeout(()=>scrollToEl($('#resultSection')),80);
 }
 
@@ -330,11 +333,61 @@ function renderSituationHelp(){
     box.innerHTML=`<strong>예시</strong><p>9월 30일까지 운영하고 폐업할 예정인데 구청 신고를 위해 공단 접수증이 필요한 경우 → 현재까지의 자료를 먼저 <b>일부이관</b>하고 접수증을 받은 뒤, 9월 30일 운영 종료 후 남은 자료를 모두 추가 이관하여 <b>이관완료</b>로 처리합니다.</p>`;
   }else if(typeKey==='transfer' && operation==='ended'){
     box.classList.remove('hidden');
-    box.innerHTML=`<strong>예시</strong><p>이미 급여 제공이 끝나 더 이상 새 자료가 생기지 않는 기관 → 보존 중인 이관대상 자료 전체를 제출하여 처음부터 <b>이관완료</b>로 처리합니다.</p>`;
+    box.innerHTML=`<strong>예시</strong><p>현재 급여를 제공하지 않아 더 이상 새 자료가 생기지 않는 기관 → 보존 중인 이관대상 자료 전체를 제출하여 처음부터 <b>이관완료</b>로 처리합니다.</p>`;
   }else{
     box.classList.add('hidden');
     box.innerHTML='';
   }
+}
+
+function renderApplicantDocs(){
+  const result=$('#applicantResult');
+  if(!visitorType || !entityType){
+    result.classList.add('hidden');
+    result.innerHTML='';
+    return;
+  }
+  let title='';
+  let items=[];
+  let note='';
+  if(visitorType==='rep' && entityType==='individual'){
+    title='개인기관 · 대표자 직접 방문';
+    items=['대표자 신분증'];
+    note='신청서와 이관 관련 서류는 앞의 준비서류 안내에 따라 별도로 준비합니다.';
+  }else if(visitorType==='rep' && entityType==='corporate'){
+    title='법인기관 · 법인대표자 직접 방문';
+    items=['법인대표자 신분증'];
+    note='국가·지방자치단체 기관은 법인 기준으로 확인하는 공단 업무기준이 사용됩니다.';
+  }else if(visitorType==='agent' && entityType==='individual'){
+    title='개인기관 · 대리인 방문';
+    items=[
+      '위임장 [별지 제14호 서식] — 대표자 인감 날인',
+      '대표자 인감증명서',
+      '대표자 신분증 앞면 사본',
+      '대리인 신분증 앞면 사본 및 방문 시 신분증 지참'
+    ];
+    note='위임장에는 대표자의 인감을 사용하고, 인감증명서와 일치하는지 확인합니다.';
+  }else{
+    title='법인기관 · 대리인 방문';
+    items=[
+      '위임장 [별지 제14호 서식] — 법인인감 날인',
+      '법인인감증명서',
+      '법인대표자 신분증 앞면 사본',
+      '대리인 신분증 앞면 사본 및 방문 시 신분증 지참'
+    ];
+    note='위임장에는 법인인감을 사용하고, 법인인감증명서와 일치하는지 확인합니다.';
+  }
+  const linked=items.map(x=>x.includes('위임장')?`<li><a class="inline-doc-link" href="forms/authorization.html" target="_blank" rel="noopener">${x}</a></li>`:`<li>${x}</li>`).join('');
+  result.innerHTML=`<strong>${title}</strong><ul>${linked}</ul><p>${note}</p>`;
+  result.classList.remove('hidden');
+}
+
+function resetApplicantChoice(){
+  visitorType=null; entityType=null;
+  $$('[data-visitor],[data-entity]').forEach(b=>b.classList.remove('selected'));
+  $('#entityStep').classList.add('hidden');
+  $('#applicantResult').classList.add('hidden');
+  $('#applicantResult').innerHTML='';
 }
 
 function checkItems(){
@@ -381,8 +434,21 @@ $$('[data-business]').forEach(btn=>btn.addEventListener('click',()=>selectBusine
 $$('[data-operation]').forEach(btn=>btn.addEventListener('click',()=>selectOperation(btn.dataset.operation)));
 $$('[data-jump]').forEach(btn=>btn.addEventListener('click',()=>scrollToEl(document.getElementById(btn.dataset.jump))));
 
+$$('[data-visitor]').forEach(btn=>btn.addEventListener('click',()=>{
+  visitorType=btn.dataset.visitor; entityType=null;
+  $$('[data-visitor]').forEach(b=>b.classList.toggle('selected',b===btn));
+  $$('[data-entity]').forEach(b=>b.classList.remove('selected'));
+  $('#entityStep').classList.remove('hidden');
+  $('#applicantResult').classList.add('hidden');
+}));
+$$('[data-entity]').forEach(btn=>btn.addEventListener('click',()=>{
+  entityType=btn.dataset.entity;
+  $$('[data-entity]').forEach(b=>b.classList.toggle('selected',b===btn));
+  renderApplicantDocs();
+}));
+
 $('#changeBtn').addEventListener('click',()=>{ scrollToEl($('#start')); });
-$('#resetBtn').addEventListener('click',()=>{business=null;typeKey=null;operation=null;$$('[data-business], [data-operation]').forEach(b=>b.classList.remove('selected'));$('#typeSection').classList.add('hidden');$('#operationSection').classList.add('hidden');$('#resultSection').classList.add('hidden');$$('[data-content]').forEach(el=>el.classList.add('hidden'));scrollToEl($('#start'));});
+$('#resetBtn').addEventListener('click',()=>{business=null;typeKey=null;operation=null;resetApplicantChoice();$$('[data-business], [data-operation]').forEach(b=>b.classList.remove('selected'));$('#typeSection').classList.add('hidden');$('#operationSection').classList.add('hidden');$('#resultSection').classList.add('hidden');$$('[data-content]').forEach(el=>el.classList.add('hidden'));scrollToEl($('#start'));});
 $('#fontBtn').addEventListener('click',()=>{const on=document.body.classList.toggle('large-text');$('#fontBtn').setAttribute('aria-pressed',String(on));$('#fontBtn').textContent=on?'가− 기본 글자':'가+ 글자 크게';});
 $('#makeLabelBtn').addEventListener('click',()=>{
   const years=$$('#yearChoices input:checked').map(i=>i.value);
@@ -413,3 +479,20 @@ $('#clearBindingBtn').addEventListener('click',()=>{
 });
 $$('#yearChoices input, #serviceChoices input').forEach(i=>i.addEventListener('change',()=>$('#bindingError').classList.add('hidden')));
 $('#clearChecks').addEventListener('click',()=>{if(!business||!typeKey)return;localStorage.removeItem(`hyupeup-check-${business}-${typeKey}-${operation||'na'}`);renderChecks();});
+
+
+// 상단 업무별 바로가기: 아직 상황을 선택하지 않은 경우 먼저 선택 단계로 안내합니다.
+document.querySelectorAll('.overview-card, .overview-wide').forEach(link=>{
+  link.addEventListener('click', e=>{
+    const id=(link.getAttribute('href')||'').replace('#','');
+    const target=document.getElementById(id);
+    if(target && target.hasAttribute('data-content') && target.classList.contains('hidden')){
+      e.preventDefault();
+      scrollToEl(document.getElementById('start'));
+    }
+  });
+});
+
+if('serviceWorker' in navigator){
+  window.addEventListener('load',()=>navigator.serviceWorker.register('service-worker.js').catch(()=>{}));
+}
