@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#0b5cab" />
   <meta name="description" content="장기요양기관 휴업·폐업 자료이관 절차를 쉽게 확인하는 안내 사이트" />
   <title>장기요양기관 휴·폐업 안내</title>
-  <link rel="stylesheet" href="styles-v27.css?v=27" />
+  <link rel="stylesheet" href="styles-v28.css?v=28" />
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" href="icons/icon-192.png" />
 </head>
@@ -31,7 +31,7 @@
       <div class="shell">
         <span class="hero-chip">장기요양기관 휴·폐업 업무를 한눈에</span>
         <h2>휴업·폐업 준비,<br><strong>순서대로 확인하세요</strong></h2>
-        <p class="hero-text">기관의 상황을 선택하면 자료이관, 제출서류, 신청인 확인서류, 편철방법과 후속 신고까지 순서대로 안내합니다.</p>
+        <p class="hero-text">기관의 상황을 선택하면 자료이관, 제출서류, 신청인 확인서류, 편철방법과 후속 신고까지 <span class="no-break">순서대로</span> 안내합니다.</p>
 
         <div class="core-alert">
           <span class="alert-icon" aria-hidden="true">!</span>
@@ -531,7 +531,7 @@
       caches.keys().then(keys => Promise.all(keys.filter(k => k.startsWith('hyupeup-guide-')).map(k => caches.delete(k)))).catch(()=>{});
     }
   </script>
-  <script src="app-v27.js?v=27"></script>
+  <script src="app-v28.js?v=28"></script>
 
   <div class="form-modal hidden" id="formModal" role="dialog" aria-modal="true" aria-labelledby="formModalTitle">
     <div class="form-modal-backdrop" data-form-close></div>

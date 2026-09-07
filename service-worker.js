@@ -1,14 +1,15 @@
-const CACHE='hyupeup-guide-v13';
-const ASSETS=['./','index.html','styles.css','app.js','manifest.json','forms/authorization.html','forms/confirmation.html'];
-self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
-self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
-self.addEventListener('fetch',e=>{
-  if(e.request.method!=='GET') return;
-  e.respondWith(
-    fetch(e.request).then(resp=>{
-      const copy=resp.clone();
-      caches.open(CACHE).then(c=>c.put(e.request,copy));
-      return resp;
-    }).catch(()=>caches.match(e.request).then(r=>r||caches.match('index.html')))
-  );
+/* 기존 휴·폐업 안내사이트 캐시를 삭제한 뒤 서비스워커를 해제합니다. */
+self.addEventListener('install', () => {
+  self.skipWaiting();
+});
+
+self.addEventListener('activate', (event) => {
+  event.waitUntil((async () => {
+    const cacheNames = await caches.keys();
+    await Promise.all(cacheNames.map((name) => caches.delete(name)));
+    await self.registration.unregister();
+
+    const windows = await self.clients.matchAll({ type: 'window' });
+    await Promise.all(windows.map((client) => client.navigate(client.url)));
+  })());
 });
