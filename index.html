@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#0b5cab" />
   <meta name="description" content="장기요양기관 휴업·폐업 자료이관 절차를 쉽게 확인하는 안내 사이트" />
   <title>장기요양기관 휴·폐업 안내</title>
-  <link rel="stylesheet" href="styles-v30.css?v=30" />
+  <link rel="stylesheet" href="styles-v31.css?v=31" />
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" href="icons/icon-192.png" />
 </head>
@@ -74,16 +74,16 @@
         </div>
         <div class="question-overview-grid">
           <a href="#faq-start" class="question-overview-card"><b>시작</b><strong>휴·폐업 준비는 무엇부터 하나요?</strong></a>
+          <a href="#faq-period" class="question-overview-card"><b>기간</b><strong>이관자료는 몇 개월분을 준비하나요?</strong></a>
+          <a href="#faq-transfer" class="question-overview-card"><b>이관</b><strong>어떤 자료를 공단에 이관하나요?</strong></a>
+          <a href="#faq-exclusion" class="question-overview-card"><b>제외</b><strong>청구서·청구명세서도 이관하나요?</strong></a>
           <a href="#faq-basic-docs" class="question-overview-card"><b>서류</b><strong>기본으로 작성하는 서류는 무엇인가요?</strong></a>
           <a href="#faq-agent" class="question-overview-card"><b>대리인</b><strong>대리인이 제출하면 무엇이 필요한가요?</strong></a>
           <a href="#faq-loss" class="question-overview-card"><b>분실</b><strong>자료를 전부 분실했다면 어떻게 하나요?</strong></a>
           <a href="#faq-no-history" class="question-overview-card"><b>이력 없음</b><strong>급여제공이력 없음은 어떤 경우인가요?</strong></a>
           <a href="#faq-self-storage" class="question-overview-card"><b>휴업</b><strong>휴업 중 기관에서 직접 보관할 수 있나요?</strong></a>
-          <a href="#faq-period" class="question-overview-card"><b>기간</b><strong>이관자료는 몇 개월분을 준비하나요?</strong></a>
-          <a href="#faq-transfer" class="question-overview-card"><b>이관</b><strong>어떤 자료를 공단에 이관하나요?</strong></a>
-          <a href="#faq-exclusion" class="question-overview-card"><b>제외</b><strong>청구서·청구명세서도 이관하나요?</strong></a>
-          <a href="#faq-binding" class="question-overview-card"><b>편철</b><strong>기록물 편철 순서는 어떻게 확인하나요?</strong></a>
           <a href="#transfer-list-example" class="question-overview-card"><b>작성 예시</b><strong>이관 목록표는 어느 칸에 적나요?</strong></a>
+          <a href="#faq-binding" class="question-overview-card"><b>편철</b><strong>기록물 편철 순서는 어떻게 확인하나요?</strong></a>
         </div>
       </div>
     </section>
@@ -542,7 +542,7 @@
       caches.keys().then(keys => Promise.all(keys.filter(k => k.startsWith('hyupeup-guide-')).map(k => caches.delete(k)))).catch(()=>{});
     }
   </script>
-  <script src="app-v30.js?v=30"></script>
+  <script src="app-v31.js?v=31"></script>
 
   <div class="form-modal hidden" id="formModal" role="dialog" aria-modal="true" aria-labelledby="formModalTitle">
     <div class="form-modal-backdrop" data-form-close></div>
