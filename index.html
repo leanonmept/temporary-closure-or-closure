@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#0b5cab" />
   <meta name="description" content="장기요양기관 휴업·폐업 자료이관 절차를 쉽게 확인하는 안내 사이트" />
   <title>장기요양기관 휴·폐업 안내</title>
-  <link rel="stylesheet" href="styles-v31.css?v=31" />
+  <link rel="stylesheet" href="styles-v33.css?v=33" />
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" href="icons/icon-192.png" />
 </head>
@@ -52,10 +52,10 @@
         </div>
         <div class="overview-grid">
           <a href="#start" class="overview-card"><b>01</b><strong>신청접수</strong><span>휴업·폐업 구분부터 공단 접수증 수령까지</span></a>
-          <a href="#documents" class="overview-card"><b>02</b><strong>제출서류</strong><span>신청서·목록표·확인서·위임장과 신청인 서류</span></a>
-          <a href="#binding" class="overview-card"><b>03</b><strong>편철방법</strong><span>누르면 편철 내용으로 바로 이동</span></a>
-          <a href="#records" class="overview-card"><b>04</b><strong>자료이관</strong><span>이관대상·이관 제외자료·전자문서 확인</span></a>
-          <a href="#forms" class="overview-card"><b>05</b><strong>제출서식</strong><span>신청서·목록표·확인서·위임장 바로 확인</span></a>
+          <a href="#records" class="overview-card"><b>02</b><strong>자료이관</strong><span>이관대상·이관 제외자료·전자문서 확인</span></a>
+          <a href="#documents" class="overview-card"><b>03</b><strong>제출서류</strong><span>신청서·목록표·확인서·위임장과 신청인 서류</span></a>
+          <a href="#forms" class="overview-card"><b>04</b><strong>제출서식</strong><span>신청서·목록표·확인서·위임장 바로 확인</span></a>
+          <a href="#binding" class="overview-card"><b>05</b><strong>편철방법</strong><span>누르면 편철 내용으로 바로 이동</span></a>
           <a href="#check" class="overview-card"><b>06</b><strong>확인사항</strong><span>공단 방문 전 빠뜨린 항목이 없는지 최종점검</span></a>
         </div>
         <div class="overview-subrow">
@@ -243,25 +243,61 @@
           <p>참고 사이트의 서식 구성을 유지하되, 공식 법령 서식은 국가법령정보센터로 연결했습니다.</p>
         </div>
 
-        <div class="forms-grid">
-          <a class="form-card" href="https://www.law.go.kr/LSW/flDownload.do?bylClsCd=110202&flSeq=153264663&gubun=" target="_blank" rel="noopener">
-            <span>법정서식</span>
-            <strong>신청서 · 이관목록표 · 분실/훼손목록표</strong>
-            <p>별지 제36호서식에 신청서와 두 종류의 목록표가 함께 포함되어 있습니다.</p>
-            <b>공식 서식 열기 →</b>
-          </a>
-          <a class="form-card" href="forms/authorization.html" target="_blank" rel="noopener">
+        <div class="forms-bundle">
+          <div>
+            <span>관련 서식 전체</span>
+            <strong>신청서 · 이관목록표 · 분실/훼손목록표 · 확인서 · 위임장</strong>
+            <p>별지 제36호의 3개 서식은 하나의 공식 서식 파일에 함께 포함되어 있습니다.</p>
+          </div>
+          <a class="bundle-download" href="forms/관련서식_전체모음.zip" download>전체 다운로드</a>
+        </div>
+
+        <div class="forms-grid forms-grid-five">
+          <article class="form-card">
+            <span>별지 제36호</span>
+            <strong>공단이관·자체보관 신청서</strong>
+            <p>휴·폐업 시 공단이관 또는 자체보관을 신청하는 법정서식입니다.</p>
+            <div class="form-actions">
+              <a href="forms/annex36-preview.html" target="_blank" rel="noopener">미리보기</a>
+              <a href="https://www.law.go.kr/LSW/flDownload.do?bylClsCd=110202&flSeq=153264663&gubun=" target="_blank" rel="noopener">다운로드</a>
+            </div>
+          </article>
+          <article class="form-card">
+            <span>별지 제36호</span>
+            <strong>이관 목록표</strong>
+            <p>수급자별·공통서류별 이관 자료와 실제 수량을 기재합니다.</p>
+            <div class="form-actions">
+              <a href="forms/annex36-preview.html#transfer-list" target="_blank" rel="noopener">미리보기</a>
+              <a href="https://www.law.go.kr/LSW/flDownload.do?bylClsCd=110202&flSeq=153264663&gubun=" target="_blank" rel="noopener">다운로드</a>
+            </div>
+          </article>
+          <article class="form-card">
+            <span>별지 제36호</span>
+            <strong>분실 및 훼손 목록표</strong>
+            <p>분실·훼손된 자료가 있는 경우 해당 자료와 수량을 기재합니다.</p>
+            <div class="form-actions">
+              <a href="forms/annex36-preview.html#loss-list" target="_blank" rel="noopener">미리보기</a>
+              <a href="https://www.law.go.kr/LSW/flDownload.do?bylClsCd=110202&flSeq=153264663&gubun=" target="_blank" rel="noopener">다운로드</a>
+            </div>
+          </article>
+          <article class="form-card">
             <span>별지 제14호</span>
             <strong>위임장</strong>
             <p>대표자가 아닌 대리인이 신청할 때 작성합니다.</p>
-            <b>바로 보기 · 인쇄 →</b>
-          </a>
-          <a class="form-card" href="forms/confirmation.html" target="_blank" rel="noopener">
+            <div class="form-actions">
+              <a href="forms/authorization.html" target="_blank" rel="noopener">미리보기</a>
+              <a href="forms/authorization.html" download="위임장_별지14호.html">다운로드</a>
+            </div>
+          </article>
+          <article class="form-card">
             <span>별지 제2호</span>
             <strong>확인서</strong>
             <p>분실·훼손, 급여제공내역 없음 또는 기타 사유에 해당할 때 작성합니다.</p>
-            <b>바로 보기 · 인쇄 →</b>
-          </a>
+            <div class="form-actions">
+              <a href="forms/confirmation.html" target="_blank" rel="noopener">미리보기</a>
+              <a href="forms/confirmation.html" download="확인서_별지2호.html">다운로드</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -498,14 +534,14 @@
         </div>
         <div class="faq-list">
           <details id="faq-start"><summary>휴·폐업 준비를 시작하면 무엇을 먼저 해야 하나요?</summary><p>실무상 공단에 자료이관 또는 해당 유형의 접수를 진행해 접수증을 받은 뒤, 그 접수증을 포함하여 관할 시·군·구 휴·폐업 신고를 진행합니다. 기관이 아직 급여제공 중인 경우에는 기존 자료를 일부이관하고, 급여제공 종료 후 새로 발생한 자료를 추가 이관하여 이관완료로 처리합니다.</p></details>
+          <details id="faq-period"><summary>휴·폐업 이관자료는 몇 개월분을 준비하나요?</summary><p>휴·폐업일이 속한 기준월을 포함하여 총 61개월분을 준비합니다. 기준월로부터 5년 전 같은 달부터 기준월까지 시작월과 종료월을 모두 포함해 계산합니다. 예를 들어 2026년 9월이 기준월이면 2021년 9월부터 2026년 9월까지입니다.</p></details>
+          <details id="faq-transfer"><summary>어떤 자료가 공단 이관대상인가요?</summary><p>장기요양급여 계약 관련 서류, 급여제공기록지 등 급여비용 산정 관련 서류, 방문간호지시서(해당 기관), 급여비용 명세서 부본 또는 본인부담금수납대장, 관련 전자문서를 확인합니다.</p></details>
+          <details id="faq-exclusion"><summary>급여비용 청구서·청구명세서도 이관하나요?</summary><p>보존자료에는 포함되지만 휴·폐업 시 공단 이관 대상에서는 제외됩니다. 이관 대상과 기관 자체 보존대상을 혼동하지 않도록 구분하세요.</p></details>
           <details id="faq-basic-docs"><summary>모든 경우에 기본으로 작성하는 서류는 무엇인가요?</summary><p>공단이관·자체보관 신청서와 이관 목록표를 기본으로 작성합니다. 분실·훼손 자료가 있으면 분실 및 훼손 목록표를 추가합니다. 확인서는 분실·훼손, 급여제공내역 없음 또는 기타 사유에 해당할 때 작성하며, 분실·훼손은 일부 또는 전부를 구분해 표시합니다.</p></details>
           <details id="faq-agent"><summary>대표자가 아닌 대리인이 제출하면 무엇이 필요한가요?</summary><p>위임장을 작성해야 합니다. 개인기관과 법인기관은 위임장에 사용하는 인감 및 확인서류가 다르므로 ‘신청인 서류’에서 대표자/대리인과 개인/법인을 선택해 확인하세요.</p></details>
           <details id="faq-loss"><summary>전건 분실이면 어떻게 처리하나요?</summary><p>신청서, 이관 목록표, 분실 및 훼손 목록표, 확인서를 작성합니다. 확인서에는 분실·훼손된 자료와 경위를 기재합니다. 자료 기록·관리 또는 이관 의무 위반이 인정되는 경우 과태료가 부과될 수 있습니다.</p></details>
           <details id="faq-no-history"><summary>급여제공이력 없음은 어떤 경우인가요?</summary><p>최근 5년간 장기요양급여 제공이력이 없거나, 휴업 후 새로운 급여제공이력 없이 폐업을 신고하는 경우입니다. 신청서, 이관 목록표, 확인서를 작성하며 확인서에는 급여제공내역이 없다는 내용을 기재합니다.</p></details>
           <details id="faq-self-storage"><summary>휴업 중 자료를 기관에서 직접 보관할 수 있나요?</summary><p>휴업기관은 휴업 예정일 전에 자체보관을 신청하고 공단의 허가를 받은 경우에 자체보관할 수 있습니다. 신청서에는 보관기간, 보관장소, 보관책임자와 연락처를 작성합니다.</p></details>
-          <details id="faq-period"><summary>휴·폐업 이관자료는 몇 개월분을 준비하나요?</summary><p>휴·폐업일이 속한 기준월을 포함하여 총 61개월분을 준비합니다. 기준월로부터 5년 전 같은 달부터 기준월까지 시작월과 종료월을 모두 포함해 계산합니다. 예를 들어 2026년 9월이 기준월이면 2021년 9월부터 2026년 9월까지입니다.</p></details>
-          <details id="faq-transfer"><summary>어떤 자료가 공단 이관대상인가요?</summary><p>장기요양급여 계약 관련 서류, 급여제공기록지 등 급여비용 산정 관련 서류, 방문간호지시서(해당 기관), 급여비용 명세서 부본 또는 본인부담금수납대장, 관련 전자문서를 확인합니다.</p></details>
-          <details id="faq-exclusion"><summary>급여비용 청구서·청구명세서도 이관하나요?</summary><p>보존자료에는 포함되지만 휴·폐업 시 공단 이관 대상에서는 제외됩니다. 이관 대상과 기관 자체 보존대상을 혼동하지 않도록 구분하세요.</p></details>
           <details id="faq-binding"><summary>편철 순서는 어떻게 확인하나요?</summary><p>운영연도와 급여종류를 복수로 선택한 뒤 ‘편철 구조 확인하기’를 누르면 급여종류별 정리 순서를 확인할 수 있습니다.</p></details>
         </div>
       </div>
@@ -522,13 +558,23 @@
           <a href="https://www.nhis.or.kr/nhis/about/retrieveBranchList.do" target="_blank" rel="noopener">공단 지사찾기</a>
           <a href="tel:15771000">1577-1000 전화</a>
         </div>
+        <div class="health25-guide">
+          <div>
+            <strong>건강보험25시 앱으로 지사찾기</strong>
+            <p><b>건강보험25시 앱 실행 → 고객센터 → 지사찾기</b>에서 가까운 공단 지사를 확인할 수 있습니다.</p>
+          </div>
+          <div class="health25-links">
+            <a href="https://play.google.com/store/apps/details?id=kr.or.nhic" target="_blank" rel="noopener">안드로이드 앱</a>
+            <a href="https://apps.apple.com/kr/app/id375279377" target="_blank" rel="noopener">아이폰 앱</a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
     <div class="shell">
-      <strong>장기요양기관 휴·폐업 자료이관 안내</strong>
+      <strong>장기요양기관 휴·폐업 자료이관 안내 · v33</strong>
       <p>장기요양기관 휴·폐업 자료이관 업무를 쉽게 확인하기 위한 안내입니다. 실제 제출 전 관할 지사의 최신 안내를 확인해 주세요.</p>
     </div>
   </footer>
@@ -542,7 +588,7 @@
       caches.keys().then(keys => Promise.all(keys.filter(k => k.startsWith('hyupeup-guide-')).map(k => caches.delete(k)))).catch(()=>{});
     }
   </script>
-  <script src="app-v31.js?v=31"></script>
+  <script src="app-v33.js?v=33"></script>
 
   <div class="form-modal hidden" id="formModal" role="dialog" aria-modal="true" aria-labelledby="formModalTitle">
     <div class="form-modal-backdrop" data-form-close></div>
